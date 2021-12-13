@@ -71,8 +71,10 @@ namespace ComputerParts.App
             //else
             //{
             sql = "UPDATE `tblitems` SET  `BrandID`='" + cboBrand.SelectedValue + "', `Description`='" + txtDescription.Text + "', `PartsID`=" + cboParts.SelectedValue + ", `LocationID`=" + cboLocation.SelectedValue + ", `CompSetID`=" + cboCompSet.SelectedValue + " WHERE  `Barcode`='" + txtBarcode.Text + "'";
+
             config.Execute_CUD(sql, "error to execute the query.", "Item updated successfully.");
             //}
+            this.Close();
         }
     }
 }

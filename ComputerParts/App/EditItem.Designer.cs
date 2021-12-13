@@ -109,6 +109,7 @@ namespace ComputerParts.App
             // 
             // txtBarcode
             // 
+            this.txtBarcode.Enabled = false;
             this.txtBarcode.Location = new System.Drawing.Point(136, 45);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(347, 20);

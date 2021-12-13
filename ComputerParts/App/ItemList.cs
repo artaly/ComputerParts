@@ -26,14 +26,20 @@ namespace ComputerParts.App
 
         }
 
+        protected void FillDataGridView()
+        {
+            config.Load_DTG("SELECT `Barcode`,`Parts`,`Brand`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtgList);
+
+        }
         private void ItemList_Load(object sender, EventArgs e)
         {
             txtSearch_TextChanged(sender, e);
+            FillDataGridView();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            int itemid = int.Parse(DataGridView1.CurrentRow.Cells[0].Value.ToString());
+            int itemid = int.Parse(dtgList.CurrentRow.Cells[0].Value.ToString());
             Form frm = new EditItem(itemid);
             frm.ShowDialog();
         }
@@ -43,8 +49,8 @@ namespace ComputerParts.App
             sql = "SELECT  ItemID, `Barcode`,`Parts`,`Brand`, i.`Description`,`Location`, `ComputerSet`,Status "
                 + " FROM `tblbrand` b,`tblitems` i, `tblparts` p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID "
                 + "AND (Status Like '%" + ComboBox1.Text + "%')";
-            config.Load_DTG(sql, DataGridView1);
-            DataGridView1.Columns[0].Visible = false;
+            config.Load_DTG(sql, dtgList);
+            dtgList.Columns[0].Visible = false;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -54,8 +60,9 @@ namespace ComputerParts.App
                 + "AND (Barcode Like '%" + txtSearch.Text + "%' OR Parts Like '%"
                 + txtSearch.Text + "%' OR Brand Like '%" + txtSearch.Text + "%' OR i.Description Like '%"
                 + txtSearch.Text + "%' OR Location Like '%" + txtSearch.Text + "%')";
-            config.Load_DTG(sql, DataGridView1);
-            DataGridView1.Columns[0].Visible = false;
+            config.Load_DTG(sql, dtgList);
+            dtgList.Columns[0].Visible = false;
         }
-    }
+
+    }   
 }

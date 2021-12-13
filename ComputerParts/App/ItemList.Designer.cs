@@ -30,11 +30,10 @@ namespace ComputerParts.App
         private void InitializeComponent()
         {
             this.ComboBox1 = new System.Windows.Forms.ComboBox();
-            this.DataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnEdit = new System.Windows.Forms.Button();
+            this.dtgList = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgList)).BeginInit();
             this.SuspendLayout();
             // 
             // ComboBox1
@@ -52,36 +51,23 @@ namespace ComputerParts.App
             this.ComboBox1.Text = "Select Status";
             this.ComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
-            // DataGridView1
+            // dtgList
             // 
-            this.DataGridView1.AllowUserToAddRows = false;
-            this.DataGridView1.AllowUserToDeleteRows = false;
-            this.DataGridView1.AllowUserToResizeColumns = false;
-            this.DataGridView1.AllowUserToResizeRows = false;
-            this.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DataGridView1.Location = new System.Drawing.Point(18, 71);
-            this.DataGridView1.Name = "DataGridView1";
-            this.DataGridView1.RowHeadersVisible = false;
-            this.DataGridView1.RowHeadersWidth = 62;
-            this.DataGridView1.Size = new System.Drawing.Size(747, 380);
-            this.DataGridView1.TabIndex = 17;
-            this.DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEdit.Location = new System.Drawing.Point(643, 467);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(122, 35);
-            this.btnEdit.TabIndex = 19;
-            this.btnEdit.Text = "EDIT";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.dtgList.AllowUserToAddRows = false;
+            this.dtgList.AllowUserToDeleteRows = false;
+            this.dtgList.AllowUserToResizeColumns = false;
+            this.dtgList.AllowUserToResizeRows = false;
+            this.dtgList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtgList.Location = new System.Drawing.Point(18, 71);
+            this.dtgList.Name = "dtgList";
+            this.dtgList.RowHeadersVisible = false;
+            this.dtgList.RowHeadersWidth = 62;
+            this.dtgList.Size = new System.Drawing.Size(747, 426);
+            this.dtgList.TabIndex = 17;
+            this.dtgList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // txtSearch
             // 
@@ -107,14 +93,13 @@ namespace ComputerParts.App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.Label2);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.DataGridView1);
+            this.Controls.Add(this.dtgList);
             this.Controls.Add(this.ComboBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ItemList";
             this.Size = new System.Drawing.Size(785, 590);
             this.Load += new System.EventHandler(this.ItemList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,8 +108,7 @@ namespace ComputerParts.App
         #endregion
 
         internal System.Windows.Forms.ComboBox ComboBox1;
-        internal System.Windows.Forms.DataGridView DataGridView1;
-        internal System.Windows.Forms.Button btnEdit;
+        internal System.Windows.Forms.DataGridView dtgList;
         internal System.Windows.Forms.TextBox txtSearch;
         internal System.Windows.Forms.Label Label2;
     }

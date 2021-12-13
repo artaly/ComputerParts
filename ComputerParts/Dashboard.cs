@@ -99,7 +99,7 @@ namespace ComputerParts
                         this.manageItems.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.manageItems.Location = new System.Drawing.Point(0, 0);
                         this.manageItems.Name = "manageItems";
-                        this.manageItems.Size = new System.Drawing.Size(1177, 908);
+                        this.manageItems.Size = new System.Drawing.Size(844, 568);
                         this.manageItems.TabIndex = 0;
                     }
                     else
