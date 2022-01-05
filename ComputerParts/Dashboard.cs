@@ -187,5 +187,12 @@ namespace ComputerParts
         {
             timerDash.Enabled = true;
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+        }
     }
 }

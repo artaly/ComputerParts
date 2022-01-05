@@ -47,7 +47,7 @@ namespace ComputerParts
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            sql = "SELECT * FROM `tbluseraccounts` WHERE Username= '" + txtUsername.Text + "' and Pass = ('" + txtPassword.Text + "')";
+            sql = "SELECT * FROM `tbluseraccounts` WHERE Username= '" + txtUsername.Text + "' and Pass = sha1('" + txtPassword.Text + "')";
             maxrow = config.maxrow(sql);
             if (maxrow > 0)
             {

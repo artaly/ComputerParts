@@ -114,6 +114,18 @@ namespace ComputerParts.App
             }
         }
 
+        private void cbHide_OnChange(object sender, EventArgs e)
+        {
+            if (cbHide.Checked)
+            {
+                txt_pass.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txt_pass.UseSystemPasswordChar = true;
+            }
+        }
+
         protected void FillDataGridView()
         {
             config.Load_DTG("Select UserID as 'ID' ,Fullname as 'Name',Username as 'Username',Role as 'Type' From tbluseraccounts WHERE Status='Active'", dtg_listUser);

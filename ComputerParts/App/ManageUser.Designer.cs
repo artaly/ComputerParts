@@ -30,7 +30,6 @@ namespace ComputerParts.App
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_pass = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txt_username = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txt_name = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.lbl_id = new System.Windows.Forms.Label();
@@ -44,13 +43,18 @@ namespace ComputerParts.App
             this.btnSave = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbHide = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.txt_pass = new System.Windows.Forms.TextBox();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_listUser)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.label5);
             this.GroupBox1.Controls.Add(this.txt_pass);
+            this.GroupBox1.Controls.Add(this.cbHide);
             this.GroupBox1.Controls.Add(this.txt_username);
             this.GroupBox1.Controls.Add(this.txt_name);
             this.GroupBox1.Controls.Add(this.lbl_id);
@@ -66,23 +70,6 @@ namespace ComputerParts.App
             this.GroupBox1.TabIndex = 15;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Item Details";
-            // 
-            // txt_pass
-            // 
-            this.txt_pass.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
-            this.txt_pass.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(71)))), ((int)(((byte)(101)))));
-            this.txt_pass.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
-            this.txt_pass.BorderThickness = 3;
-            this.txt_pass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_pass.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txt_pass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txt_pass.isPassword = false;
-            this.txt_pass.Location = new System.Drawing.Point(253, 143);
-            this.txt_pass.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_pass.Name = "txt_pass";
-            this.txt_pass.Size = new System.Drawing.Size(322, 44);
-            this.txt_pass.TabIndex = 41;
-            this.txt_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txt_username
             // 
@@ -136,7 +123,7 @@ namespace ComputerParts.App
             this.cbo_type.Items.AddRange(new object[] {
             "Administrator",
             "Staff"});
-            this.cbo_type.Location = new System.Drawing.Point(253, 194);
+            this.cbo_type.Location = new System.Drawing.Point(253, 205);
             this.cbo_type.Name = "cbo_type";
             this.cbo_type.Size = new System.Drawing.Size(322, 38);
             this.cbo_type.TabIndex = 37;
@@ -165,7 +152,7 @@ namespace ComputerParts.App
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(172, 201);
+            this.label1.Location = new System.Drawing.Point(172, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 25);
             this.label1.TabIndex = 10;
@@ -251,6 +238,40 @@ namespace ComputerParts.App
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(451, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 15);
+            this.label5.TabIndex = 52;
+            this.label5.Text = "Show Password";
+            // 
+            // cbHide
+            // 
+            this.cbHide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.cbHide.CausesValidation = false;
+            this.cbHide.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.cbHide.Checked = false;
+            this.cbHide.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
+            this.cbHide.ForeColor = System.Drawing.Color.White;
+            this.cbHide.Location = new System.Drawing.Point(555, 182);
+            this.cbHide.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.cbHide.Name = "cbHide";
+            this.cbHide.Size = new System.Drawing.Size(20, 20);
+            this.cbHide.TabIndex = 51;
+            this.cbHide.OnChange += new System.EventHandler(this.cbHide_OnChange);
+            // 
+            // txt_pass
+            // 
+            this.txt_pass.ForeColor = System.Drawing.Color.Black;
+            this.txt_pass.Location = new System.Drawing.Point(255, 141);
+            this.txt_pass.Name = "txt_pass";
+            this.txt_pass.Size = new System.Drawing.Size(320, 32);
+            this.txt_pass.TabIndex = 42;
+            this.txt_pass.UseSystemPasswordChar = true;
+            // 
             // ManageUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,12 +303,14 @@ namespace ComputerParts.App
         internal System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Label lbl_id;
         private Bunifu.Framework.UI.BunifuMetroTextbox txt_name;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txt_pass;
         private Bunifu.Framework.UI.BunifuMetroTextbox txt_username;
         internal System.Windows.Forms.DataGridView dtg_listUser;
         internal System.Windows.Forms.Button btnUpdate;
         internal System.Windows.Forms.Button btnSave;
         internal System.Windows.Forms.Button btnNew;
         internal System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_pass;
+        private Bunifu.Framework.UI.BunifuCheckbox cbHide;
     }
 }

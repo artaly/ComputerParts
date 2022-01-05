@@ -34,6 +34,8 @@ namespace ComputerParts
             this.panel_main = new System.Windows.Forms.Panel();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dshTime = new System.Windows.Forms.Label();
+            this.dshDate = new System.Windows.Forms.Label();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.menu_active = new System.Windows.Forms.Panel();
@@ -43,9 +45,8 @@ namespace ComputerParts
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.dshDate = new System.Windows.Forms.Label();
             this.timerDash = new System.Windows.Forms.Timer(this.components);
-            this.dshTime = new System.Windows.Forms.Label();
+            this.btnLogOut = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel_main.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -61,7 +62,7 @@ namespace ComputerParts
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_main.Location = new System.Drawing.Point(220, 60);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Padding = new System.Windows.Forms.Padding(24, 24, 24, 24);
+            this.panel_main.Padding = new System.Windows.Forms.Padding(24);
             this.panel_main.Size = new System.Drawing.Size(844, 568);
             this.panel_main.TabIndex = 2;
             // 
@@ -90,6 +91,28 @@ namespace ComputerParts
             this.panel4.Size = new System.Drawing.Size(844, 60);
             this.panel4.TabIndex = 1;
             // 
+            // dshTime
+            // 
+            this.dshTime.AutoSize = true;
+            this.dshTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dshTime.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dshTime.Location = new System.Drawing.Point(650, 16);
+            this.dshTime.Name = "dshTime";
+            this.dshTime.Size = new System.Drawing.Size(94, 24);
+            this.dshTime.TabIndex = 2;
+            this.dshTime.Text = "h:mm:ss tt";
+            // 
+            // dshDate
+            // 
+            this.dshDate.AutoSize = true;
+            this.dshDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dshDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dshDate.Location = new System.Drawing.Point(14, 16);
+            this.dshDate.Name = "dshDate";
+            this.dshDate.Size = new System.Drawing.Size(154, 24);
+            this.dshDate.TabIndex = 1;
+            this.dshDate.Text = "Date Placeholder";
+            // 
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(7)))), ((int)(((byte)(70)))));
@@ -107,6 +130,7 @@ namespace ComputerParts
             // panelSideMenu
             // 
             this.panelSideMenu.BackgroundImage = global::ComputerParts.Properties.Resources.bg_login;
+            this.panelSideMenu.Controls.Add(this.btnLogOut);
             this.panelSideMenu.Controls.Add(this.menu_active);
             this.panelSideMenu.Controls.Add(this.btnManageUsers);
             this.panelSideMenu.Controls.Add(this.btnManageItems);
@@ -116,7 +140,7 @@ namespace ComputerParts
             this.panelSideMenu.Cursor = System.Windows.Forms.Cursors.No;
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelSideMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelSideMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(220, 628);
             this.panelSideMenu.TabIndex = 0;
@@ -243,7 +267,7 @@ namespace ComputerParts
             this.panelLogo.Controls.Add(this.pbLogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(220, 77);
             this.panelLogo.TabIndex = 0;
@@ -252,7 +276,7 @@ namespace ComputerParts
             // 
             this.pbLogo.Image = global::ComputerParts.Properties.Resources.icon;
             this.pbLogo.Location = new System.Drawing.Point(81, 16);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(57, 44);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -272,31 +296,45 @@ namespace ComputerParts
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // dshDate
-            // 
-            this.dshDate.AutoSize = true;
-            this.dshDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dshDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dshDate.Location = new System.Drawing.Point(14, 16);
-            this.dshDate.Name = "dshDate";
-            this.dshDate.Size = new System.Drawing.Size(154, 24);
-            this.dshDate.TabIndex = 1;
-            this.dshDate.Text = "Date Placeholder";
-            // 
             // timerDash
             // 
             this.timerDash.Tick += new System.EventHandler(this.timerDash_Tick);
             // 
-            // dshTime
+            // btnLogOut
             // 
-            this.dshTime.AutoSize = true;
-            this.dshTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dshTime.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dshTime.Location = new System.Drawing.Point(650, 16);
-            this.dshTime.Name = "dshTime";
-            this.dshTime.Size = new System.Drawing.Size(94, 24);
-            this.dshTime.TabIndex = 2;
-            this.dshTime.Text = "h:mm:ss tt";
+            this.btnLogOut.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
+            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLogOut.BorderRadius = 0;
+            this.btnLogOut.ButtonText = "Logout";
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogOut.DisabledColor = System.Drawing.Color.Gray;
+            this.btnLogOut.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnLogOut.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Iconimage")));
+            this.btnLogOut.Iconimage_right = null;
+            this.btnLogOut.Iconimage_right_Selected = null;
+            this.btnLogOut.Iconimage_Selected = null;
+            this.btnLogOut.IconMarginLeft = 0;
+            this.btnLogOut.IconMarginRight = 0;
+            this.btnLogOut.IconRightVisible = true;
+            this.btnLogOut.IconRightZoom = 0D;
+            this.btnLogOut.IconVisible = true;
+            this.btnLogOut.IconZoom = 40D;
+            this.btnLogOut.IsTab = false;
+            this.btnLogOut.Location = new System.Drawing.Point(0, 556);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnLogOut.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(71)))), ((int)(((byte)(101)))));
+            this.btnLogOut.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnLogOut.selected = false;
+            this.btnLogOut.Size = new System.Drawing.Size(220, 48);
+            this.btnLogOut.TabIndex = 16;
+            this.btnLogOut.Text = "Logout";
+            this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogOut.Textcolor = System.Drawing.Color.White;
+            this.btnLogOut.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // Dashboard
             // 
@@ -308,7 +346,7 @@ namespace ComputerParts
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelSideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
@@ -341,5 +379,6 @@ namespace ComputerParts
         private System.Windows.Forms.Label dshDate;
         private System.Windows.Forms.Label dshTime;
         private System.Windows.Forms.Timer timerDash;
+        private Bunifu.Framework.UI.BunifuFlatButton btnLogOut;
     }
 }

@@ -49,6 +49,8 @@ namespace ComputerParts.App
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblBarcode = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbxQuantity = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_listItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,9 +58,10 @@ namespace ComputerParts.App
             // 
             this.Label4.AutoSize = true;
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label4.Location = new System.Drawing.Point(57, 274);
+            this.Label4.Location = new System.Drawing.Point(76, 337);
+            this.Label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(72, 18);
+            this.Label4.Size = new System.Drawing.Size(91, 24);
             this.Label4.TabIndex = 37;
             this.Label4.Text = "Barcode :";
             // 
@@ -66,36 +69,40 @@ namespace ComputerParts.App
             // 
             this.Label5.AutoSize = true;
             this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label5.Location = new System.Drawing.Point(38, 377);
+            this.Label5.Location = new System.Drawing.Point(51, 464);
+            this.Label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(91, 18);
+            this.Label5.Size = new System.Drawing.Size(114, 24);
             this.Label5.TabIndex = 39;
             this.Label5.Text = "Description :";
             // 
             // txtBarcode
             // 
             this.txtBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBarcode.Location = new System.Drawing.Point(159, 271);
+            this.txtBarcode.Location = new System.Drawing.Point(212, 334);
+            this.txtBarcode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(474, 24);
+            this.txtBarcode.Size = new System.Drawing.Size(631, 29);
             this.txtBarcode.TabIndex = 29;
             // 
             // Label6
             // 
             this.Label6.AutoSize = true;
             this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label6.Location = new System.Drawing.Point(56, 419);
+            this.Label6.Location = new System.Drawing.Point(76, 554);
+            this.Label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(73, 18);
+            this.Label6.Size = new System.Drawing.Size(91, 24);
             this.Label6.TabIndex = 41;
             this.Label6.Text = "Location :";
             // 
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(159, 371);
+            this.txtDescription.Location = new System.Drawing.Point(212, 457);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(474, 32);
+            this.txtDescription.Size = new System.Drawing.Size(631, 38);
             this.txtDescription.TabIndex = 34;
             this.txtDescription.Text = "";
             // 
@@ -103,27 +110,30 @@ namespace ComputerParts.App
             // 
             this.cboLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboLocation.FormattingEnabled = true;
-            this.cboLocation.Location = new System.Drawing.Point(159, 415);
+            this.cboLocation.Location = new System.Drawing.Point(213, 549);
+            this.cboLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboLocation.Name = "cboLocation";
-            this.cboLocation.Size = new System.Drawing.Size(474, 26);
+            this.cboLocation.Size = new System.Drawing.Size(631, 32);
             this.cboLocation.TabIndex = 35;
             // 
             // cboBrand
             // 
             this.cboBrand.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboBrand.FormattingEnabled = true;
-            this.cboBrand.Location = new System.Drawing.Point(159, 339);
+            this.cboBrand.Location = new System.Drawing.Point(212, 417);
+            this.cboBrand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboBrand.Name = "cboBrand";
-            this.cboBrand.Size = new System.Drawing.Size(474, 26);
+            this.cboBrand.Size = new System.Drawing.Size(631, 32);
             this.cboBrand.TabIndex = 32;
             // 
             // Label7
             // 
             this.Label7.AutoSize = true;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label7.Location = new System.Drawing.Point(21, 459);
+            this.Label7.Location = new System.Drawing.Point(30, 602);
+            this.Label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(108, 18);
+            this.Label7.Size = new System.Drawing.Size(135, 24);
             this.Label7.TabIndex = 42;
             this.Label7.Text = "Computer Set :";
             // 
@@ -131,9 +141,10 @@ namespace ComputerParts.App
             // 
             this.Label3.AutoSize = true;
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.Location = new System.Drawing.Point(74, 341);
+            this.Label3.Location = new System.Drawing.Point(99, 420);
+            this.Label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(55, 18);
+            this.Label3.Size = new System.Drawing.Size(70, 24);
             this.Label3.TabIndex = 33;
             this.Label3.Text = "Brand :";
             // 
@@ -141,18 +152,20 @@ namespace ComputerParts.App
             // 
             this.cboParts.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboParts.FormattingEnabled = true;
-            this.cboParts.Location = new System.Drawing.Point(159, 301);
+            this.cboParts.Location = new System.Drawing.Point(212, 370);
+            this.cboParts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboParts.Name = "cboParts";
-            this.cboParts.Size = new System.Drawing.Size(474, 26);
+            this.cboParts.Size = new System.Drawing.Size(631, 32);
             this.cboParts.TabIndex = 31;
             // 
             // Label2
             // 
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.Location = new System.Drawing.Point(78, 305);
+            this.Label2.Location = new System.Drawing.Point(104, 375);
+            this.Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(51, 18);
+            this.Label2.Size = new System.Drawing.Size(61, 24);
             this.Label2.TabIndex = 30;
             this.Label2.Text = "Parts :";
             // 
@@ -160,9 +173,10 @@ namespace ComputerParts.App
             // 
             this.cboCompSet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCompSet.FormattingEnabled = true;
-            this.cboCompSet.Location = new System.Drawing.Point(160, 455);
+            this.cboCompSet.Location = new System.Drawing.Point(215, 597);
+            this.cboCompSet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboCompSet.Name = "cboCompSet";
-            this.cboCompSet.Size = new System.Drawing.Size(474, 26);
+            this.cboCompSet.Size = new System.Drawing.Size(631, 32);
             this.cboCompSet.TabIndex = 43;
             // 
             // dtg_listItems
@@ -174,12 +188,13 @@ namespace ComputerParts.App
             this.dtg_listItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_listItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_listItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtg_listItems.Location = new System.Drawing.Point(12, 15);
+            this.dtg_listItems.Location = new System.Drawing.Point(16, 18);
+            this.dtg_listItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtg_listItems.Name = "dtg_listItems";
             this.dtg_listItems.RowHeadersVisible = false;
             this.dtg_listItems.RowHeadersWidth = 62;
             this.dtg_listItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtg_listItems.Size = new System.Drawing.Size(778, 244);
+            this.dtg_listItems.Size = new System.Drawing.Size(1037, 300);
             this.dtg_listItems.TabIndex = 46;
             this.dtg_listItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_listItems_CellClick);
             // 
@@ -188,9 +203,10 @@ namespace ComputerParts.App
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSave.Location = new System.Drawing.Point(658, 333);
+            this.btnSave.Location = new System.Drawing.Point(877, 410);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(132, 49);
+            this.btnSave.Size = new System.Drawing.Size(176, 60);
             this.btnSave.TabIndex = 44;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -201,9 +217,10 @@ namespace ComputerParts.App
             this.btnNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNew.Location = new System.Drawing.Point(658, 278);
+            this.btnNew.Location = new System.Drawing.Point(877, 342);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(132, 49);
+            this.btnNew.Size = new System.Drawing.Size(176, 60);
             this.btnNew.TabIndex = 45;
             this.btnNew.Text = "CLEAR";
             this.btnNew.UseVisualStyleBackColor = false;
@@ -214,9 +231,10 @@ namespace ComputerParts.App
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Location = new System.Drawing.Point(658, 446);
+            this.btnDelete.Location = new System.Drawing.Point(877, 549);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(132, 49);
+            this.btnDelete.Size = new System.Drawing.Size(176, 60);
             this.btnDelete.TabIndex = 54;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -227,9 +245,10 @@ namespace ComputerParts.App
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.Location = new System.Drawing.Point(658, 388);
+            this.btnUpdate.Location = new System.Drawing.Point(877, 478);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(132, 49);
+            this.btnUpdate.Size = new System.Drawing.Size(176, 60);
             this.btnUpdate.TabIndex = 51;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -244,18 +263,20 @@ namespace ComputerParts.App
             "Damage",
             "Maintenance",
             "Lost"});
-            this.cboStatus.Location = new System.Drawing.Point(159, 487);
+            this.cboStatus.Location = new System.Drawing.Point(214, 636);
+            this.cboStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(474, 26);
+            this.cboStatus.Size = new System.Drawing.Size(631, 32);
             this.cboStatus.TabIndex = 56;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(71, 491);
+            this.label1.Location = new System.Drawing.Point(97, 641);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 18);
+            this.label1.Size = new System.Drawing.Size(70, 24);
             this.label1.TabIndex = 55;
             this.label1.Text = "Status :";
             // 
@@ -263,16 +284,41 @@ namespace ComputerParts.App
             // 
             this.lblBarcode.AutoSize = true;
             this.lblBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBarcode.Location = new System.Drawing.Point(9, -6);
+            this.lblBarcode.Location = new System.Drawing.Point(12, -7);
+            this.lblBarcode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBarcode.Name = "lblBarcode";
-            this.lblBarcode.Size = new System.Drawing.Size(72, 18);
+            this.lblBarcode.Size = new System.Drawing.Size(91, 24);
             this.lblBarcode.TabIndex = 57;
             this.lblBarcode.Text = "Barcode :";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(76, 514);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 24);
+            this.label8.TabIndex = 59;
+            this.label8.Text = "Quantity :";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tbxQuantity
+            // 
+            this.tbxQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxQuantity.Location = new System.Drawing.Point(213, 503);
+            this.tbxQuantity.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxQuantity.Name = "tbxQuantity";
+            this.tbxQuantity.Size = new System.Drawing.Size(631, 38);
+            this.tbxQuantity.TabIndex = 58;
+            this.tbxQuantity.Text = "";
+            // 
             // ManageItems
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.tbxQuantity);
             this.Controls.Add(this.lblBarcode);
             this.Controls.Add(this.cboStatus);
             this.Controls.Add(this.label1);
@@ -295,7 +341,7 @@ namespace ComputerParts.App
             this.Controls.Add(this.cboBrand);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ManageItems";
-            this.Size = new System.Drawing.Size(895, 615);
+            this.Size = new System.Drawing.Size(1193, 757);
             this.Load += new System.EventHandler(this.ManageItems_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_listItems)).EndInit();
             this.ResumeLayout(false);
@@ -325,5 +371,7 @@ namespace ComputerParts.App
         internal System.Windows.Forms.ComboBox cboStatus;
         internal System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Label lblBarcode;
+        internal System.Windows.Forms.Label label8;
+        internal System.Windows.Forms.RichTextBox tbxQuantity;
     }
 }
