@@ -20,7 +20,7 @@ namespace ComputerParts
         {
             InitializeComponent();
         }
-
+        // comment lang
         private void timer_Tick(object sender, EventArgs e)
         {
             DateTime time = DateTime.Now;
