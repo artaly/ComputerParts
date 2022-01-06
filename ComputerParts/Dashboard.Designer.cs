@@ -136,7 +136,6 @@ namespace ComputerParts
             // panelSideMenu
             // 
             this.panelSideMenu.BackgroundImage = global::ComputerParts.Properties.Resources.bg_login;
-            this.panelSideMenu.Controls.Add(this.btnRequestUnit);
             this.panelSideMenu.Controls.Add(this.btnLogOut);
             this.panelSideMenu.Controls.Add(this.menu_active);
             this.panelSideMenu.Controls.Add(this.btnManageUsers);
@@ -144,6 +143,7 @@ namespace ComputerParts
             this.panelSideMenu.Controls.Add(this.btnItemList);
             this.panelSideMenu.Controls.Add(this.panelLogo);
             this.panelSideMenu.Controls.Add(this.bunifuSeparator1);
+            this.panelSideMenu.Controls.Add(this.btnRequestUnit);
             this.panelSideMenu.Cursor = System.Windows.Forms.Cursors.No;
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
