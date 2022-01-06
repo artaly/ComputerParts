@@ -82,7 +82,7 @@ namespace ComputerParts.App
             this.txtBarcode.Location = new System.Drawing.Point(225, 560);
             this.txtBarcode.Margin = new System.Windows.Forms.Padding(4);
             this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(631, 29);
+            this.txtBarcode.Size = new System.Drawing.Size(918, 29);
             this.txtBarcode.TabIndex = 29;
             // 
             // Label6
@@ -102,7 +102,7 @@ namespace ComputerParts.App
             this.txtDescription.Location = new System.Drawing.Point(225, 683);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(631, 38);
+            this.txtDescription.Size = new System.Drawing.Size(918, 38);
             this.txtDescription.TabIndex = 34;
             this.txtDescription.Text = "";
             // 
@@ -113,7 +113,7 @@ namespace ComputerParts.App
             this.cboLocation.Location = new System.Drawing.Point(226, 775);
             this.cboLocation.Margin = new System.Windows.Forms.Padding(4);
             this.cboLocation.Name = "cboLocation";
-            this.cboLocation.Size = new System.Drawing.Size(631, 32);
+            this.cboLocation.Size = new System.Drawing.Size(918, 32);
             this.cboLocation.TabIndex = 35;
             // 
             // cboBrand
@@ -123,7 +123,7 @@ namespace ComputerParts.App
             this.cboBrand.Location = new System.Drawing.Point(225, 643);
             this.cboBrand.Margin = new System.Windows.Forms.Padding(4);
             this.cboBrand.Name = "cboBrand";
-            this.cboBrand.Size = new System.Drawing.Size(631, 32);
+            this.cboBrand.Size = new System.Drawing.Size(918, 32);
             this.cboBrand.TabIndex = 32;
             // 
             // Label7
@@ -155,7 +155,7 @@ namespace ComputerParts.App
             this.cboParts.Location = new System.Drawing.Point(225, 596);
             this.cboParts.Margin = new System.Windows.Forms.Padding(4);
             this.cboParts.Name = "cboParts";
-            this.cboParts.Size = new System.Drawing.Size(631, 32);
+            this.cboParts.Size = new System.Drawing.Size(918, 32);
             this.cboParts.TabIndex = 31;
             // 
             // Label2
@@ -176,7 +176,7 @@ namespace ComputerParts.App
             this.cboCompSet.Location = new System.Drawing.Point(228, 823);
             this.cboCompSet.Margin = new System.Windows.Forms.Padding(4);
             this.cboCompSet.Name = "cboCompSet";
-            this.cboCompSet.Size = new System.Drawing.Size(631, 32);
+            this.cboCompSet.Size = new System.Drawing.Size(918, 32);
             this.cboCompSet.TabIndex = 43;
             // 
             // dtg_listItems
@@ -203,10 +203,10 @@ namespace ComputerParts.App
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSave.Location = new System.Drawing.Point(890, 636);
+            this.btnSave.Location = new System.Drawing.Point(1182, 620);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(176, 60);
+            this.btnSave.Size = new System.Drawing.Size(405, 67);
             this.btnSave.TabIndex = 44;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -217,10 +217,10 @@ namespace ComputerParts.App
             this.btnNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNew.Location = new System.Drawing.Point(890, 568);
+            this.btnNew.Location = new System.Drawing.Point(1182, 552);
             this.btnNew.Margin = new System.Windows.Forms.Padding(4);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(176, 60);
+            this.btnNew.Size = new System.Drawing.Size(405, 67);
             this.btnNew.TabIndex = 45;
             this.btnNew.Text = "CLEAR";
             this.btnNew.UseVisualStyleBackColor = false;
@@ -231,10 +231,10 @@ namespace ComputerParts.App
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Location = new System.Drawing.Point(890, 775);
+            this.btnDelete.Location = new System.Drawing.Point(1182, 759);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(176, 60);
+            this.btnDelete.Size = new System.Drawing.Size(405, 67);
             this.btnDelete.TabIndex = 54;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -245,10 +245,10 @@ namespace ComputerParts.App
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.Location = new System.Drawing.Point(890, 704);
+            this.btnUpdate.Location = new System.Drawing.Point(1182, 688);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(176, 60);
+            this.btnUpdate.Size = new System.Drawing.Size(405, 67);
             this.btnUpdate.TabIndex = 51;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -266,7 +266,7 @@ namespace ComputerParts.App
             this.cboStatus.Location = new System.Drawing.Point(227, 862);
             this.cboStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(631, 32);
+            this.cboStatus.Size = new System.Drawing.Size(918, 32);
             this.cboStatus.TabIndex = 56;
             // 
             // label1
@@ -309,7 +309,7 @@ namespace ComputerParts.App
             this.tbxQuantity.Location = new System.Drawing.Point(226, 729);
             this.tbxQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.tbxQuantity.Name = "tbxQuantity";
-            this.tbxQuantity.Size = new System.Drawing.Size(631, 38);
+            this.tbxQuantity.Size = new System.Drawing.Size(918, 38);
             this.tbxQuantity.TabIndex = 58;
             this.tbxQuantity.Text = "";
             // 
