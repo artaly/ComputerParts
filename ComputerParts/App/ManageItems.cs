@@ -33,11 +33,6 @@ namespace ComputerParts.App
             FillDataGridView();
         }
 
-        private void gbxManageItems_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtBarcode.Text == "" || txtDescription.Text == "")
