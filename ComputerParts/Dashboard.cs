@@ -17,6 +17,8 @@ namespace ComputerParts
         private ManageUser manageUser;
         private ItemList itemList;
         private ManageItems manageItems;
+        private RequestUnit requestUnit;
+
 
 
         public Dashboard()
@@ -64,7 +66,7 @@ namespace ComputerParts
                         this.manageUser.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.manageUser.Location = new System.Drawing.Point(0, 0);
                         this.manageUser.Name = "uCAnalytics";
-                        this.manageUser.Size = new System.Drawing.Size(1177, 908);
+                        this.manageUser.Size = new System.Drawing.Size(1627, 1006);
                         this.manageUser.TabIndex = 0;
                     }
                     else
@@ -82,7 +84,7 @@ namespace ComputerParts
                         this.itemList.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.itemList.Location = new System.Drawing.Point(0, 0);
                         this.itemList.Name = "itemList";
-                        this.itemList.Size = new System.Drawing.Size(1177, 908);
+                        this.itemList.Size = new System.Drawing.Size(1627, 1006);
                         this.itemList.TabIndex = 0;
                     }
                     else
@@ -99,7 +101,7 @@ namespace ComputerParts
                         this.manageItems.Dock = System.Windows.Forms.DockStyle.Fill;
                         this.manageItems.Location = new System.Drawing.Point(0, 0);
                         this.manageItems.Name = "manageItems";
-                        this.manageItems.Size = new System.Drawing.Size(844, 568);
+                        this.manageItems.Size = new System.Drawing.Size(1627, 1006);
                         this.manageItems.TabIndex = 0;
                     }
                     else
@@ -108,41 +110,42 @@ namespace ComputerParts
                     }
                     this.btnManageItems.Normalcolor = Color.FromArgb(15, 25, 33);
                     break;
-                /*
-            case "demand":
-                if (this.uCDemand == null)
+                
+            case "requestUnit":
+                if (this.requestUnit == null)
                 {
-                    this.uCDemand = new UCDemand();
-                    this.panel_main.Controls.Add(uCDemand);
-                    this.uCDemand.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCDemand.Location = new System.Drawing.Point(0, 0);
-                    this.uCDemand.Name = "uCDemand";
-                    this.uCDemand.Size = new System.Drawing.Size(250, 776);
-                    this.uCDemand.TabIndex = 0;
+                    this.requestUnit = new RequestUnit();
+                    this.panel_main.Controls.Add(requestUnit);
+                    this.requestUnit.Dock = System.Windows.Forms.DockStyle.Fill;
+                    this.requestUnit.Location = new System.Drawing.Point(0, 0);
+                    this.requestUnit.Name = "uCDemand";
+                    this.requestUnit.Size = new System.Drawing.Size(1627, 1006);
+                    this.requestUnit.TabIndex = 0;
                 }
                 else
                 {
-                    this.panel_main.Controls.Add(uCDemand);
+                    this.panel_main.Controls.Add(requestUnit);
                 }
-                this.btn_demand.Normalcolor = Color.FromArgb(15, 25, 33);
+                this.btnRequestUnit.Normalcolor = Color.FromArgb(15, 25, 33);
                 break;
-            case "genetic":
-                if (this.uCGenetic == null)
-                {
-                    this.uCGenetic = new UCGenetic();
-                    this.panel_main.Controls.Add(uCGenetic);
-                    this.uCGenetic.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.uCGenetic.Location = new System.Drawing.Point(0, 0);
-                    this.uCGenetic.Name = "uCGenetic";
-                    this.uCGenetic.Size = new System.Drawing.Size(250, 776);
-                    this.uCGenetic.TabIndex = 0;
-                }
-                else
-                {
-                    this.panel_main.Controls.Add(uCGenetic);
-                }
-                this.btn_genetic.Normalcolor = Color.FromArgb(15, 25, 33);
-                break;*/
+                /*
+        case "genetic":
+            if (this.uCGenetic == null)
+            {
+                this.uCGenetic = new UCGenetic();
+                this.panel_main.Controls.Add(uCGenetic);
+                this.uCGenetic.Dock = System.Windows.Forms.DockStyle.Fill;
+                this.uCGenetic.Location = new System.Drawing.Point(0, 0);
+                this.uCGenetic.Name = "uCGenetic";
+                this.uCGenetic.Size = new System.Drawing.Size(250, 776);
+                this.uCGenetic.TabIndex = 0;
+            }
+            else
+            {
+                this.panel_main.Controls.Add(uCGenetic);
+            }
+            this.btn_genetic.Normalcolor = Color.FromArgb(15, 25, 33);
+            break;*/
                 default:
                     break;
             }
@@ -193,6 +196,12 @@ namespace ComputerParts
             this.Hide();
             Login login = new Login();
             login.Show();
+        }
+
+        private void btnRequestUnit_Click(object sender, EventArgs e)
+        {
+            this.menu_active.Location = new Point(btnRequestUnit.Location.X, btnRequestUnit.Location.Y);
+            this.togglePanelMain("requestUnit");
         }
     }
 }

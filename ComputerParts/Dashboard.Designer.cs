@@ -379,6 +379,7 @@ namespace ComputerParts
             this.btnRequestUnit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnRequestUnit.Textcolor = System.Drawing.Color.White;
             this.btnRequestUnit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRequestUnit.Click += new System.EventHandler(this.btnRequestUnit_Click);
             // 
             // Dashboard
             // 
