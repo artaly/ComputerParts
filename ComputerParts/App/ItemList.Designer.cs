@@ -44,9 +44,10 @@ namespace ComputerParts.App
             "Damage",
             "Maintenance",
             "Lost"});
-            this.ComboBox1.Location = new System.Drawing.Point(619, 40);
+            this.ComboBox1.Location = new System.Drawing.Point(825, 49);
+            this.ComboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ComboBox1.Name = "ComboBox1";
-            this.ComboBox1.Size = new System.Drawing.Size(146, 21);
+            this.ComboBox1.Size = new System.Drawing.Size(193, 24);
             this.ComboBox1.TabIndex = 16;
             this.ComboBox1.Text = "Select Status";
             this.ComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
@@ -61,19 +62,21 @@ namespace ComputerParts.App
             this.dtgList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtgList.Location = new System.Drawing.Point(18, 71);
+            this.dtgList.Location = new System.Drawing.Point(24, 87);
+            this.dtgList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgList.Name = "dtgList";
             this.dtgList.RowHeadersVisible = false;
             this.dtgList.RowHeadersWidth = 62;
-            this.dtgList.Size = new System.Drawing.Size(747, 426);
+            this.dtgList.Size = new System.Drawing.Size(996, 524);
             this.dtgList.TabIndex = 17;
             this.dtgList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(86, 40);
+            this.txtSearch.Location = new System.Drawing.Point(115, 49);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(528, 20);
+            this.txtSearch.Size = new System.Drawing.Size(703, 22);
             this.txtSearch.TabIndex = 21;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -81,23 +84,24 @@ namespace ComputerParts.App
             // 
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.Location = new System.Drawing.Point(19, 39);
+            this.Label2.Location = new System.Drawing.Point(25, 48);
+            this.Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(63, 18);
+            this.Label2.Size = new System.Drawing.Size(80, 24);
             this.Label2.TabIndex = 20;
             this.Label2.Text = "Search :";
             // 
             // ItemList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.dtgList);
             this.Controls.Add(this.ComboBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ItemList";
-            this.Size = new System.Drawing.Size(785, 590);
+            this.Size = new System.Drawing.Size(1627, 1006);
             this.Load += new System.EventHandler(this.ItemList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgList)).EndInit();
             this.ResumeLayout(false);
