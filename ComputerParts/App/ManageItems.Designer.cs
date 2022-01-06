@@ -48,9 +48,9 @@ namespace ComputerParts.App
             this.btnUpdate = new System.Windows.Forms.Button();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblBarcode = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tbxQuantity = new System.Windows.Forms.RichTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_listItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,13 +188,13 @@ namespace ComputerParts.App
             this.dtg_listItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_listItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_listItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtg_listItems.Location = new System.Drawing.Point(29, 41);
+            this.dtg_listItems.Location = new System.Drawing.Point(68, 59);
             this.dtg_listItems.Margin = new System.Windows.Forms.Padding(4);
             this.dtg_listItems.Name = "dtg_listItems";
             this.dtg_listItems.RowHeadersVisible = false;
             this.dtg_listItems.RowHeadersWidth = 62;
             this.dtg_listItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtg_listItems.Size = new System.Drawing.Size(1558, 491);
+            this.dtg_listItems.Size = new System.Drawing.Size(1519, 473);
             this.dtg_listItems.TabIndex = 46;
             this.dtg_listItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_listItems_CellClick);
             // 
@@ -280,17 +280,6 @@ namespace ComputerParts.App
             this.label1.TabIndex = 55;
             this.label1.Text = "Status :";
             // 
-            // lblBarcode
-            // 
-            this.lblBarcode.AutoSize = true;
-            this.lblBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBarcode.Location = new System.Drawing.Point(25, 16);
-            this.lblBarcode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBarcode.Name = "lblBarcode";
-            this.lblBarcode.Size = new System.Drawing.Size(91, 24);
-            this.lblBarcode.TabIndex = 57;
-            this.lblBarcode.Text = "Barcode :";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -313,13 +302,22 @@ namespace ComputerParts.App
             this.tbxQuantity.TabIndex = 58;
             this.tbxQuantity.Text = "";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(15, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1592, 934);
+            this.groupBox1.TabIndex = 60;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Manage Items";
+            // 
             // ManageItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tbxQuantity);
-            this.Controls.Add(this.lblBarcode);
             this.Controls.Add(this.cboStatus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelete);
@@ -339,6 +337,7 @@ namespace ComputerParts.App
             this.Controls.Add(this.Label7);
             this.Controls.Add(this.cboLocation);
             this.Controls.Add(this.cboBrand);
+            this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ManageItems";
             this.Size = new System.Drawing.Size(1627, 1006);
@@ -370,8 +369,8 @@ namespace ComputerParts.App
         internal System.Windows.Forms.Button btnUpdate;
         internal System.Windows.Forms.ComboBox cboStatus;
         internal System.Windows.Forms.Label label1;
-        internal System.Windows.Forms.Label lblBarcode;
         internal System.Windows.Forms.Label label8;
         internal System.Windows.Forms.RichTextBox tbxQuantity;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
