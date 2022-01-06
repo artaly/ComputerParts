@@ -16,5 +16,15 @@ namespace ComputerParts.App
         {
             InitializeComponent();
         }
+
+        private void btnRequest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnItemToReq_TextChanged(object sender, EventArgs e)
+        {
+        
+        }
     }
 }
