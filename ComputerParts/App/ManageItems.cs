@@ -114,11 +114,12 @@ namespace ComputerParts.App
             txtBarcode.Text = dtg_listItems.CurrentRow.Cells[0].Value.ToString();
             cboParts.Text = dtg_listItems.CurrentRow.Cells[1].Value.ToString();
             cboBrand.Text = dtg_listItems.CurrentRow.Cells[2].Value.ToString();
-            txtDescription.Text = dtg_listItems.CurrentRow.Cells[3].Value.ToString();
-            cboLocation.Text = dtg_listItems.CurrentRow.Cells[4].Value.ToString();
-            cboCompSet.Text = dtg_listItems.CurrentRow.Cells[5].Value.ToString();
-            cboStatus.Text = dtg_listItems.CurrentRow.Cells[6].Value.ToString();
-
+            tbxQuantity.Text = dtg_listItems.CurrentRow.Cells[3].Value.ToString();
+            txtDescription.Text = dtg_listItems.CurrentRow.Cells[4].Value.ToString();
+            cboLocation.Text = dtg_listItems.CurrentRow.Cells[5].Value.ToString();
+            cboCompSet.Text = dtg_listItems.CurrentRow.Cells[6].Value.ToString();
+            cboStatus.Text = dtg_listItems.CurrentRow.Cells[7].Value.ToString();
+            
         }
     }
     }
