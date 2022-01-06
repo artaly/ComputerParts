@@ -46,8 +46,8 @@ namespace ComputerParts
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.timerDash = new System.Windows.Forms.Timer(this.components);
             this.btnRequestUnit = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.timerDash = new System.Windows.Forms.Timer(this.components);
             this.panel_main.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -62,9 +62,8 @@ namespace ComputerParts
             this.panel_main.Controls.Add(this.bunifuSeparator2);
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_main.Location = new System.Drawing.Point(293, 74);
-            this.panel_main.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_main.Margin = new System.Windows.Forms.Padding(4);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Padding = new System.Windows.Forms.Padding(32, 30, 32, 30);
             this.panel_main.Size = new System.Drawing.Size(1627, 1006);
             this.panel_main.TabIndex = 2;
             // 
@@ -89,7 +88,7 @@ namespace ComputerParts
             this.panel4.Controls.Add(this.bunifuImageButton1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(293, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1627, 74);
             this.panel4.TabIndex = 1;
@@ -124,7 +123,7 @@ namespace ComputerParts
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.Location = new System.Drawing.Point(1695, 25);
-            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(23, 18);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -193,7 +192,7 @@ namespace ComputerParts
             // 
             this.menu_active.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(14)))), ((int)(((byte)(134)))));
             this.menu_active.Location = new System.Drawing.Point(0, 96);
-            this.menu_active.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menu_active.Margin = new System.Windows.Forms.Padding(4);
             this.menu_active.Name = "menu_active";
             this.menu_active.Size = new System.Drawing.Size(7, 58);
             this.menu_active.TabIndex = 7;
@@ -341,10 +340,6 @@ namespace ComputerParts
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // timerDash
-            // 
-            this.timerDash.Tick += new System.EventHandler(this.timerDash_Tick);
-            // 
             // btnRequestUnit
             // 
             this.btnRequestUnit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
@@ -380,6 +375,10 @@ namespace ComputerParts
             this.btnRequestUnit.Textcolor = System.Drawing.Color.White;
             this.btnRequestUnit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRequestUnit.Click += new System.EventHandler(this.btnRequestUnit_Click);
+            // 
+            // timerDash
+            // 
+            this.timerDash.Tick += new System.EventHandler(this.timerDash_Tick);
             // 
             // Dashboard
             // 
