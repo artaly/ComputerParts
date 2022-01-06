@@ -1461,6 +1461,9 @@
         AIBb1BAAALhFDQEAgFvUEAAAuEUNAQCAW9QQAAC45Ir5/wHnP1mWoRN2BgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="timerDash.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="btnRequestUnit.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -1741,7 +1744,4 @@
         BAAAflGLAADAJ/fM/w9S5rdEneLLtAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="timerDash.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>
