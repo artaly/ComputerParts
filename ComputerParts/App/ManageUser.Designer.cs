@@ -299,7 +299,7 @@ namespace ComputerParts.App
             this.Controls.Add(this.GroupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManageUser";
-            this.Size = new System.Drawing.Size(1047, 726);
+            this.Size = new System.Drawing.Size(1627, 1006);
             this.Load += new System.EventHandler(this.ManageUser_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
