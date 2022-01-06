@@ -24,7 +24,8 @@ namespace ComputerParts.App
 
         private void btnRequest_Click(object sender, EventArgs e)
         {
-
+            sql = "INSERT INTO `tblrequests`(`FullName`, `Email`, `ContactNo`, `ItemToRequest`, `Quantity`, `DateRequested`) " + "VALUES ('" + tbxFullName.Text + "','" + tbxEmail.Text + "','" + tbxContactNo.Text + "','" + tbxItemToReq.Text + "', '" + nudQuantity.Text + "', Now())";
+            config.Execute_CUD(sql, "error to execute the query.", "Item requested!");
             ClearTextBoxes(this.Controls);
         }
 
