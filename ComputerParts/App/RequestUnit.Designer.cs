@@ -47,7 +47,7 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnItemToReq = new System.Windows.Forms.TextBox();
+            this.tbxItemToReq = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,7 +55,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnItemToReq);
+            this.groupBox1.Controls.Add(this.tbxItemToReq);
             this.groupBox1.Controls.Add(this.tbxFullName);
             this.groupBox1.Controls.Add(this.nudQuantity);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel7);
@@ -254,6 +254,7 @@
             this.tbxReqID.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
             this.tbxReqID.BorderThickness = 3;
             this.tbxReqID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbxReqID.Enabled = false;
             this.tbxReqID.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbxReqID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbxReqID.isPassword = false;
@@ -320,14 +321,14 @@
             this.dataGridView1.Size = new System.Drawing.Size(934, 897);
             this.dataGridView1.TabIndex = 50;
             // 
-            // btnItemToReq
+            // tbxItemToReq
             // 
-            this.btnItemToReq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnItemToReq.Location = new System.Drawing.Point(40, 441);
-            this.btnItemToReq.Name = "btnItemToReq";
-            this.btnItemToReq.Size = new System.Drawing.Size(532, 30);
-            this.btnItemToReq.TabIndex = 69;
-            this.btnItemToReq.TextChanged += new System.EventHandler(this.btnItemToReq_TextChanged);
+            this.tbxItemToReq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxItemToReq.Location = new System.Drawing.Point(40, 441);
+            this.tbxItemToReq.Name = "tbxItemToReq";
+            this.tbxItemToReq.Size = new System.Drawing.Size(532, 30);
+            this.tbxItemToReq.TabIndex = 69;
+            this.tbxItemToReq.TextChanged += new System.EventHandler(this.btnItemToReq_TextChanged);
             // 
             // RequestUnit
             // 
@@ -338,6 +339,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RequestUnit";
             this.Size = new System.Drawing.Size(1627, 1006);
+            this.Load += new System.EventHandler(this.RequestUnit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
@@ -366,6 +368,6 @@
         private System.Windows.Forms.NumericUpDown nudQuantity;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private System.Windows.Forms.TextBox btnItemToReq;
+        private System.Windows.Forms.TextBox tbxItemToReq;
     }
 }
