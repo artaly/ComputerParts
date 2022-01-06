@@ -47,6 +47,7 @@ namespace ComputerParts
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.timerDash = new System.Windows.Forms.Timer(this.components);
+            this.btnRequestUnit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel_main.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -135,6 +136,7 @@ namespace ComputerParts
             // panelSideMenu
             // 
             this.panelSideMenu.BackgroundImage = global::ComputerParts.Properties.Resources.bg_login;
+            this.panelSideMenu.Controls.Add(this.btnRequestUnit);
             this.panelSideMenu.Controls.Add(this.btnLogOut);
             this.panelSideMenu.Controls.Add(this.menu_active);
             this.panelSideMenu.Controls.Add(this.btnManageUsers);
@@ -217,7 +219,7 @@ namespace ComputerParts
             this.btnManageUsers.IconVisible = true;
             this.btnManageUsers.IconZoom = 90D;
             this.btnManageUsers.IsTab = false;
-            this.btnManageUsers.Location = new System.Drawing.Point(0, 217);
+            this.btnManageUsers.Location = new System.Drawing.Point(5, 217);
             this.btnManageUsers.Margin = new System.Windows.Forms.Padding(0);
             this.btnManageUsers.Name = "btnManageUsers";
             this.btnManageUsers.Normalcolor = System.Drawing.Color.Transparent;
@@ -253,7 +255,7 @@ namespace ComputerParts
             this.btnManageItems.IconVisible = true;
             this.btnManageItems.IconZoom = 90D;
             this.btnManageItems.IsTab = false;
-            this.btnManageItems.Location = new System.Drawing.Point(0, 158);
+            this.btnManageItems.Location = new System.Drawing.Point(5, 158);
             this.btnManageItems.Margin = new System.Windows.Forms.Padding(0);
             this.btnManageItems.Name = "btnManageItems";
             this.btnManageItems.Normalcolor = System.Drawing.Color.Transparent;
@@ -289,7 +291,7 @@ namespace ComputerParts
             this.btnItemList.IconVisible = true;
             this.btnItemList.IconZoom = 90D;
             this.btnItemList.IsTab = false;
-            this.btnItemList.Location = new System.Drawing.Point(-4, 97);
+            this.btnItemList.Location = new System.Drawing.Point(5, 97);
             this.btnItemList.Margin = new System.Windows.Forms.Padding(0);
             this.btnItemList.Name = "btnItemList";
             this.btnItemList.Normalcolor = System.Drawing.Color.Transparent;
@@ -343,6 +345,41 @@ namespace ComputerParts
             // 
             this.timerDash.Tick += new System.EventHandler(this.timerDash_Tick);
             // 
+            // btnRequestUnit
+            // 
+            this.btnRequestUnit.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
+            this.btnRequestUnit.BackColor = System.Drawing.Color.Transparent;
+            this.btnRequestUnit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRequestUnit.BorderRadius = 0;
+            this.btnRequestUnit.ButtonText = "Request Unit";
+            this.btnRequestUnit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRequestUnit.DisabledColor = System.Drawing.Color.Gray;
+            this.btnRequestUnit.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnRequestUnit.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnRequestUnit.Iconimage")));
+            this.btnRequestUnit.Iconimage_right = null;
+            this.btnRequestUnit.Iconimage_right_Selected = null;
+            this.btnRequestUnit.Iconimage_Selected = null;
+            this.btnRequestUnit.IconMarginLeft = 0;
+            this.btnRequestUnit.IconMarginRight = 0;
+            this.btnRequestUnit.IconRightVisible = true;
+            this.btnRequestUnit.IconRightZoom = 0D;
+            this.btnRequestUnit.IconVisible = true;
+            this.btnRequestUnit.IconZoom = 90D;
+            this.btnRequestUnit.IsTab = false;
+            this.btnRequestUnit.Location = new System.Drawing.Point(5, 276);
+            this.btnRequestUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.btnRequestUnit.Name = "btnRequestUnit";
+            this.btnRequestUnit.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnRequestUnit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(71)))), ((int)(((byte)(101)))));
+            this.btnRequestUnit.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnRequestUnit.selected = false;
+            this.btnRequestUnit.Size = new System.Drawing.Size(293, 59);
+            this.btnRequestUnit.TabIndex = 17;
+            this.btnRequestUnit.Text = "Request Unit";
+            this.btnRequestUnit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRequestUnit.Textcolor = System.Drawing.Color.White;
+            this.btnRequestUnit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -388,5 +425,6 @@ namespace ComputerParts
         private System.Windows.Forms.Label dshTime;
         private System.Windows.Forms.Timer timerDash;
         private Bunifu.Framework.UI.BunifuFlatButton btnLogOut;
+        private Bunifu.Framework.UI.BunifuFlatButton btnRequestUnit;
     }
 }
