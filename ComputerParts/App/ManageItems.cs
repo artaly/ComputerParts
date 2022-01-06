@@ -55,7 +55,7 @@ namespace ComputerParts.App
             else
             {
                 sql = "INSERT INTO `tblitems` (`Barcode`, `BrandID`, `Description`, `PartsID`, `RecievedDate`, `Quantity`, `LocationID`, `CompSetID`, `Status`) " +
-         " VALUES ('" + txtBarcode.Text + "'," + cboBrand.SelectedValue + ",'" + txtDescription.Text + "'," + cboParts.SelectedValue + ",Date(Now()),1," + cboLocation.SelectedValue + "," + cboCompSet.SelectedValue + ",'" + cboStatus.Text + "')";
+         " VALUES ('" + txtBarcode.Text + "'," + cboBrand.SelectedValue + ",'" + txtDescription.Text + "'," + cboParts.SelectedValue + ",Date(Now()),1," + cboLocation.SelectedValue + "," +tbxQuantity + "," + cboCompSet.SelectedValue + ",'" + cboStatus.Text + "')";
                 config.Execute_CUD(sql, "error to execute the query.", "New item created successfully.");
             }
 
@@ -75,7 +75,7 @@ namespace ComputerParts.App
             config.fiil_CBO(sql, cboLocation);
             sql = "SELECT  CompSetID,ComputerSet FROM tblcompset";
             config.fiil_CBO(sql, cboCompSet);
-            config.Load_DTG("SELECT `Barcode`,`Parts`,`Brand`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts` p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
+            config.Load_DTG("SELECT `Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts` p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
             ClearTextBoxes(this.Controls);
         }
 
@@ -90,7 +90,7 @@ namespace ComputerParts.App
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-            sql = "UPDATE `tblitems` SET  `BrandID`='" + cboBrand.SelectedValue + "', `Description`='" + txtDescription.Text + "', `PartsID`=" + cboParts.SelectedValue + ", `LocationID`=" + cboLocation.SelectedValue + ", `CompSetID`=" + cboCompSet.SelectedValue + ", `Status`='" + cboStatus.Text + "' WHERE  `Barcode`='" + txtBarcode.Text + "'";
+            sql = "UPDATE `tblitems` SET  `BrandID`='" + cboBrand.SelectedValue + "', `Description`='" + txtDescription.Text + "', `PartsID`=" + cboParts.SelectedValue + ", `Quantity`=" + tbxQuantity.Text + ", `LocationID`=" + cboLocation.SelectedValue + ", `CompSetID`=" + cboCompSet.SelectedValue + ", `Status`='" + cboStatus.Text + "' WHERE  `Barcode`='" + txtBarcode.Text + "'";
             config.Execute_CUD(sql, "error to execute the query.", "Item updated successfully.");
             FillDataGridView();
         }
@@ -105,7 +105,7 @@ namespace ComputerParts.App
 
         protected void FillDataGridView()
         {
-            config.Load_DTG("SELECT `Barcode`,`Parts`,`Brand`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
+            config.Load_DTG("SELECT `Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
 
         }
 
