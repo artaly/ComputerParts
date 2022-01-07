@@ -45,12 +45,13 @@ namespace ComputerParts.App
             maxrow = config.maxrow(sql);
             if (maxrow > 0)
             {
-                MessageBox.Show(cboParts.Text + " is already exist in the computer ", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(cboParts.Text + " already exist in the computer ", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                sql = "INSERT INTO `tblitems` (`Barcode`, `BrandID`, `Description`, `PartsID`, `RecievedDate`, `Quantity`, `LocationID`, `CompSetID`, `Status`) " +
-         " VALUES ('" + txtBarcode.Text + "'," + cboBrand.SelectedValue + ",'" + txtDescription.Text + "'," + cboParts.SelectedValue + ",Date(Now()),1," + cboLocation.SelectedValue + "," +tbxQuantity + "," + cboCompSet.SelectedValue + ",'" + cboStatus.Text + "')";
+                
+                sql = "INSERT INTO `tblitems` (`Barcode`, `BrandID`, `Description`, `PartsID`, `RecievedDate`, `LocationID`, `Quantity`, `CompSetID`, `Status`) " +
+         " VALUES ('" + txtBarcode.Text + "'," + cboBrand.SelectedValue + ",'" + txtDescription.Text + "'," + cboParts.SelectedValue + ",Date(Now())," + cboLocation.SelectedValue + ",'"+ tbxQuantity.Text+ "'," + cboCompSet.SelectedValue + ",'" + cboStatus.Text + "')";
                 config.Execute_CUD(sql, "error to execute the query.", "New item created successfully.");
             }
 
