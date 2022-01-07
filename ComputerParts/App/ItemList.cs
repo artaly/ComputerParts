@@ -21,11 +21,6 @@ namespace ComputerParts.App
         usableFunction funct = new usableFunction();
         string sql;
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         protected void FillDataGridView()
         {
             config.Load_DTG("SELECT `Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtgList);

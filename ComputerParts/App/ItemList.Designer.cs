@@ -69,7 +69,6 @@ namespace ComputerParts.App
             this.dtgList.RowHeadersWidth = 62;
             this.dtgList.Size = new System.Drawing.Size(1631, 866);
             this.dtgList.TabIndex = 17;
-            this.dtgList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // txtSearch
             // 

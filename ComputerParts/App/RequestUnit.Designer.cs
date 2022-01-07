@@ -33,7 +33,7 @@
             this.tbxItemToReq = new System.Windows.Forms.TextBox();
             this.tbxFullName = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.nudQuantity = new System.Windows.Forms.NumericUpDown();
-            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblQty = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRequest = new System.Windows.Forms.Button();
@@ -45,10 +45,10 @@
             this.tbxReqID = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgReq = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgReq)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -56,7 +56,7 @@
             this.groupBox1.Controls.Add(this.tbxItemToReq);
             this.groupBox1.Controls.Add(this.tbxFullName);
             this.groupBox1.Controls.Add(this.nudQuantity);
-            this.groupBox1.Controls.Add(this.bunifuCustomLabel7);
+            this.groupBox1.Controls.Add(this.lblQty);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel3);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnRequest);
@@ -69,11 +69,11 @@
             this.groupBox1.Controls.Add(this.bunifuCustomLabel1);
             this.groupBox1.Controls.Add(this.bunifuFlatButton1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(21, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(24, 19);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(609, 909);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(685, 1136);
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Request Item";
@@ -81,9 +81,10 @@
             // tbxItemToReq
             // 
             this.tbxItemToReq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbxItemToReq.Location = new System.Drawing.Point(40, 441);
+            this.tbxItemToReq.Location = new System.Drawing.Point(45, 551);
+            this.tbxItemToReq.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbxItemToReq.Name = "tbxItemToReq";
-            this.tbxItemToReq.Size = new System.Drawing.Size(532, 30);
+            this.tbxItemToReq.Size = new System.Drawing.Size(598, 35);
             this.tbxItemToReq.TabIndex = 69;
             this.tbxItemToReq.TextChanged += new System.EventHandler(this.btnItemToReq_TextChanged);
             // 
@@ -97,39 +98,40 @@
             this.tbxFullName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbxFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbxFullName.isPassword = false;
-            this.tbxFullName.Location = new System.Drawing.Point(36, 166);
-            this.tbxFullName.Margin = new System.Windows.Forms.Padding(5);
+            this.tbxFullName.Location = new System.Drawing.Point(40, 208);
+            this.tbxFullName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbxFullName.Name = "tbxFullName";
-            this.tbxFullName.Size = new System.Drawing.Size(536, 53);
+            this.tbxFullName.Size = new System.Drawing.Size(603, 66);
             this.tbxFullName.TabIndex = 59;
             this.tbxFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // nudQuantity
             // 
-            this.nudQuantity.Location = new System.Drawing.Point(40, 521);
+            this.nudQuantity.Location = new System.Drawing.Point(45, 651);
+            this.nudQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nudQuantity.Name = "nudQuantity";
-            this.nudQuantity.Size = new System.Drawing.Size(120, 30);
+            this.nudQuantity.Size = new System.Drawing.Size(135, 35);
             this.nudQuantity.TabIndex = 68;
             // 
-            // bunifuCustomLabel7
+            // lblQty
             // 
-            this.bunifuCustomLabel7.AutoSize = true;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(40, 484);
-            this.bunifuCustomLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(83, 24);
-            this.bunifuCustomLabel7.TabIndex = 66;
-            this.bunifuCustomLabel7.Text = "Quantity:";
+            this.lblQty.AutoSize = true;
+            this.lblQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQty.Location = new System.Drawing.Point(45, 605);
+            this.lblQty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQty.Name = "lblQty";
+            this.lblQty.Size = new System.Drawing.Size(106, 29);
+            this.lblQty.TabIndex = 66;
+            this.lblQty.Text = "Quantity:";
             // 
             // bunifuCustomLabel3
             // 
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(36, 405);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(40, 506);
             this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(138, 24);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(178, 29);
             this.bunifuCustomLabel3.TabIndex = 64;
             this.bunifuCustomLabel3.Text = "Item to request:";
             // 
@@ -138,10 +140,10 @@
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClear.Location = new System.Drawing.Point(108, 589);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Location = new System.Drawing.Point(122, 736);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(151, 68);
+            this.btnClear.Size = new System.Drawing.Size(170, 85);
             this.btnClear.TabIndex = 61;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -151,10 +153,10 @@
             this.btnRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRequest.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRequest.Location = new System.Drawing.Point(332, 589);
-            this.btnRequest.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRequest.Location = new System.Drawing.Point(374, 736);
+            this.btnRequest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnRequest.Name = "btnRequest";
-            this.btnRequest.Size = new System.Drawing.Size(151, 69);
+            this.btnRequest.Size = new System.Drawing.Size(170, 86);
             this.btnRequest.TabIndex = 60;
             this.btnRequest.Text = "REQUEST";
             this.btnRequest.UseVisualStyleBackColor = false;
@@ -164,10 +166,10 @@
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(36, 224);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(40, 280);
             this.bunifuCustomLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(62, 24);
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(80, 29);
             this.bunifuCustomLabel5.TabIndex = 58;
             this.bunifuCustomLabel5.Text = "Email:";
             // 
@@ -181,10 +183,10 @@
             this.tbxContactNo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbxContactNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbxContactNo.isPassword = false;
-            this.tbxContactNo.Location = new System.Drawing.Point(36, 351);
-            this.tbxContactNo.Margin = new System.Windows.Forms.Padding(5);
+            this.tbxContactNo.Location = new System.Drawing.Point(40, 439);
+            this.tbxContactNo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbxContactNo.Name = "tbxContactNo";
-            this.tbxContactNo.Size = new System.Drawing.Size(536, 53);
+            this.tbxContactNo.Size = new System.Drawing.Size(603, 66);
             this.tbxContactNo.TabIndex = 57;
             this.tbxContactNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -192,10 +194,10 @@
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(36, 322);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(40, 402);
             this.bunifuCustomLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(110, 24);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(139, 29);
             this.bunifuCustomLabel4.TabIndex = 56;
             this.bunifuCustomLabel4.Text = "Contact no.:";
             // 
@@ -209,10 +211,10 @@
             this.tbxEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbxEmail.isPassword = false;
-            this.tbxEmail.Location = new System.Drawing.Point(36, 262);
-            this.tbxEmail.Margin = new System.Windows.Forms.Padding(5);
+            this.tbxEmail.Location = new System.Drawing.Point(40, 328);
+            this.tbxEmail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(536, 53);
+            this.tbxEmail.Size = new System.Drawing.Size(603, 66);
             this.tbxEmail.TabIndex = 53;
             this.tbxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -220,10 +222,10 @@
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(36, 137);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(40, 171);
             this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(102, 24);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(130, 29);
             this.bunifuCustomLabel2.TabIndex = 52;
             this.bunifuCustomLabel2.Text = "Full Name:";
             // 
@@ -238,10 +240,10 @@
             this.tbxReqID.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.tbxReqID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbxReqID.isPassword = false;
-            this.tbxReqID.Location = new System.Drawing.Point(36, 86);
-            this.tbxReqID.Margin = new System.Windows.Forms.Padding(5);
+            this.tbxReqID.Location = new System.Drawing.Point(40, 108);
+            this.tbxReqID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tbxReqID.Name = "tbxReqID";
-            this.tbxReqID.Size = new System.Drawing.Size(536, 46);
+            this.tbxReqID.Size = new System.Drawing.Size(603, 58);
             this.tbxReqID.TabIndex = 51;
             this.tbxReqID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -249,10 +251,10 @@
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(32, 59);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(36, 74);
             this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(107, 24);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(138, 29);
             this.bunifuCustomLabel1.TabIndex = 50;
             this.bunifuCustomLabel1.Text = "Request ID:";
             // 
@@ -277,44 +279,44 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(1017, 322);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(1144, 402);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(323, 91);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(363, 114);
             this.bunifuFlatButton1.TabIndex = 49;
             this.bunifuFlatButton1.Text = "bunifuFlatButton1";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // dataGridView1
+            // dtgReq
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(649, 27);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(934, 897);
-            this.dataGridView1.TabIndex = 50;
+            this.dtgReq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgReq.Location = new System.Drawing.Point(730, 34);
+            this.dtgReq.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtgReq.Name = "dtgReq";
+            this.dtgReq.RowHeadersWidth = 51;
+            this.dtgReq.Size = new System.Drawing.Size(1051, 1121);
+            this.dtgReq.TabIndex = 50;
             // 
             // RequestUnit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.dtgReq);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "RequestUnit";
-            this.Size = new System.Drawing.Size(1627, 1006);
+            this.Size = new System.Drawing.Size(1830, 1258);
             this.Load += new System.EventHandler(this.RequestUnit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgReq)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,9 +335,9 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox tbxReqID;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgReq;
         private System.Windows.Forms.NumericUpDown nudQuantity;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
+        private Bunifu.Framework.UI.BunifuCustomLabel lblQty;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private System.Windows.Forms.TextBox tbxItemToReq;
     }
