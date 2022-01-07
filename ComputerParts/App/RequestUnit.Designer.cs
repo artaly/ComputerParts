@@ -31,21 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RequestUnit));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbxItemToReq = new System.Windows.Forms.TextBox();
-            this.tbxFullName = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.lblQty = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRequest = new System.Windows.Forms.Button();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tbxContactNo = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tbxEmail = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.tbxReqID = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dtgReq = new System.Windows.Forms.DataGridView();
+            this.tbxReqID = new System.Windows.Forms.TextBox();
+            this.tbxFullName = new System.Windows.Forms.TextBox();
+            this.tbxContactNo = new System.Windows.Forms.TextBox();
+            this.tbxEmail = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgReq)).BeginInit();
@@ -53,19 +53,19 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tbxItemToReq);
+            this.groupBox1.Controls.Add(this.tbxEmail);
+            this.groupBox1.Controls.Add(this.tbxContactNo);
             this.groupBox1.Controls.Add(this.tbxFullName);
+            this.groupBox1.Controls.Add(this.tbxReqID);
+            this.groupBox1.Controls.Add(this.tbxItemToReq);
             this.groupBox1.Controls.Add(this.nudQuantity);
             this.groupBox1.Controls.Add(this.lblQty);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel3);
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.btnRequest);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel5);
-            this.groupBox1.Controls.Add(this.tbxContactNo);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel4);
-            this.groupBox1.Controls.Add(this.tbxEmail);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel2);
-            this.groupBox1.Controls.Add(this.tbxReqID);
             this.groupBox1.Controls.Add(this.bunifuCustomLabel1);
             this.groupBox1.Controls.Add(this.bunifuFlatButton1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -84,33 +84,16 @@
             this.tbxItemToReq.Location = new System.Drawing.Point(45, 551);
             this.tbxItemToReq.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbxItemToReq.Name = "tbxItemToReq";
-            this.tbxItemToReq.Size = new System.Drawing.Size(598, 35);
+            this.tbxItemToReq.Size = new System.Drawing.Size(594, 35);
             this.tbxItemToReq.TabIndex = 69;
             this.tbxItemToReq.TextChanged += new System.EventHandler(this.btnItemToReq_TextChanged);
-            // 
-            // tbxFullName
-            // 
-            this.tbxFullName.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
-            this.tbxFullName.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(71)))), ((int)(((byte)(101)))));
-            this.tbxFullName.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
-            this.tbxFullName.BorderThickness = 3;
-            this.tbxFullName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxFullName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbxFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbxFullName.isPassword = false;
-            this.tbxFullName.Location = new System.Drawing.Point(40, 208);
-            this.tbxFullName.Margin = new System.Windows.Forms.Padding(6);
-            this.tbxFullName.Name = "tbxFullName";
-            this.tbxFullName.Size = new System.Drawing.Size(603, 66);
-            this.tbxFullName.TabIndex = 59;
-            this.tbxFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // nudQuantity
             // 
             this.nudQuantity.Location = new System.Drawing.Point(45, 651);
             this.nudQuantity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nudQuantity.Name = "nudQuantity";
-            this.nudQuantity.Size = new System.Drawing.Size(135, 35);
+            this.nudQuantity.Size = new System.Drawing.Size(194, 35);
             this.nudQuantity.TabIndex = 68;
             // 
             // lblQty
@@ -173,23 +156,6 @@
             this.bunifuCustomLabel5.TabIndex = 58;
             this.bunifuCustomLabel5.Text = "Email:";
             // 
-            // tbxContactNo
-            // 
-            this.tbxContactNo.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
-            this.tbxContactNo.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(71)))), ((int)(((byte)(101)))));
-            this.tbxContactNo.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
-            this.tbxContactNo.BorderThickness = 3;
-            this.tbxContactNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxContactNo.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbxContactNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbxContactNo.isPassword = false;
-            this.tbxContactNo.Location = new System.Drawing.Point(40, 439);
-            this.tbxContactNo.Margin = new System.Windows.Forms.Padding(6);
-            this.tbxContactNo.Name = "tbxContactNo";
-            this.tbxContactNo.Size = new System.Drawing.Size(603, 66);
-            this.tbxContactNo.TabIndex = 57;
-            this.tbxContactNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // bunifuCustomLabel4
             // 
             this.bunifuCustomLabel4.AutoSize = true;
@@ -201,23 +167,6 @@
             this.bunifuCustomLabel4.TabIndex = 56;
             this.bunifuCustomLabel4.Text = "Contact no.:";
             // 
-            // tbxEmail
-            // 
-            this.tbxEmail.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
-            this.tbxEmail.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(71)))), ((int)(((byte)(101)))));
-            this.tbxEmail.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
-            this.tbxEmail.BorderThickness = 3;
-            this.tbxEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxEmail.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbxEmail.isPassword = false;
-            this.tbxEmail.Location = new System.Drawing.Point(40, 328);
-            this.tbxEmail.Margin = new System.Windows.Forms.Padding(6);
-            this.tbxEmail.Name = "tbxEmail";
-            this.tbxEmail.Size = new System.Drawing.Size(603, 66);
-            this.tbxEmail.TabIndex = 53;
-            this.tbxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
@@ -228,24 +177,6 @@
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(130, 29);
             this.bunifuCustomLabel2.TabIndex = 52;
             this.bunifuCustomLabel2.Text = "Full Name:";
-            // 
-            // tbxReqID
-            // 
-            this.tbxReqID.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
-            this.tbxReqID.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(71)))), ((int)(((byte)(101)))));
-            this.tbxReqID.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(13)))), ((int)(((byte)(134)))));
-            this.tbxReqID.BorderThickness = 3;
-            this.tbxReqID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbxReqID.Enabled = false;
-            this.tbxReqID.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.tbxReqID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbxReqID.isPassword = false;
-            this.tbxReqID.Location = new System.Drawing.Point(40, 108);
-            this.tbxReqID.Margin = new System.Windows.Forms.Padding(6);
-            this.tbxReqID.Name = "tbxReqID";
-            this.tbxReqID.Size = new System.Drawing.Size(603, 58);
-            this.tbxReqID.TabIndex = 51;
-            this.tbxReqID.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCustomLabel1
             // 
@@ -279,14 +210,14 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(1144, 402);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(1646, 577);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(363, 114);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(524, 166);
             this.bunifuFlatButton1.TabIndex = 49;
             this.bunifuFlatButton1.Text = "bunifuFlatButton1";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,6 +233,34 @@
             this.dtgReq.RowHeadersWidth = 51;
             this.dtgReq.Size = new System.Drawing.Size(1192, 1121);
             this.dtgReq.TabIndex = 50;
+            // 
+            // tbxReqID
+            // 
+            this.tbxReqID.Location = new System.Drawing.Point(45, 118);
+            this.tbxReqID.Name = "tbxReqID";
+            this.tbxReqID.Size = new System.Drawing.Size(594, 35);
+            this.tbxReqID.TabIndex = 70;
+            // 
+            // tbxFullName
+            // 
+            this.tbxFullName.Location = new System.Drawing.Point(45, 228);
+            this.tbxFullName.Name = "tbxFullName";
+            this.tbxFullName.Size = new System.Drawing.Size(594, 35);
+            this.tbxFullName.TabIndex = 74;
+            // 
+            // tbxContactNo
+            // 
+            this.tbxContactNo.Location = new System.Drawing.Point(45, 452);
+            this.tbxContactNo.Name = "tbxContactNo";
+            this.tbxContactNo.Size = new System.Drawing.Size(594, 35);
+            this.tbxContactNo.TabIndex = 75;
+            // 
+            // tbxEmail
+            // 
+            this.tbxEmail.Location = new System.Drawing.Point(45, 329);
+            this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.Size = new System.Drawing.Size(594, 35);
+            this.tbxEmail.TabIndex = 76;
             // 
             // RequestUnit
             // 
@@ -326,13 +285,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         internal System.Windows.Forms.Button btnClear;
         internal System.Windows.Forms.Button btnRequest;
-        private Bunifu.Framework.UI.BunifuMetroTextbox tbxFullName;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuMetroTextbox tbxContactNo;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        private Bunifu.Framework.UI.BunifuMetroTextbox tbxEmail;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
-        private Bunifu.Framework.UI.BunifuMetroTextbox tbxReqID;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private System.Windows.Forms.DataGridView dtgReq;
@@ -340,5 +295,9 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblQty;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private System.Windows.Forms.TextBox tbxItemToReq;
+        private System.Windows.Forms.TextBox tbxEmail;
+        private System.Windows.Forms.TextBox tbxContactNo;
+        private System.Windows.Forms.TextBox tbxFullName;
+        private System.Windows.Forms.TextBox tbxReqID;
     }
 }
