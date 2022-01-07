@@ -55,46 +55,59 @@ namespace ComputerParts
             maxrow = config.maxrow(sql);
             if (maxrow > 0)
             {
-                try
+                sql = "Select Role from tbluseraccounts WHERE Username=@user";
+                using (MySqlCommand  cmd = new MySqlCommand(sql, con))
                 {
+                    cmd.Parameters.AddWithValue("@user", txtUsername.Text);
                     con.Open();
-                    MySqlDataReader reader = null;
-                    sql = "SELECT Role FROM  tbluseraccounts";
-
-                    MySqlCommand command = new MySqlCommand(sql, con);
-                    reader = command.ExecuteReader();
-
-
-
-                    while (reader.Read())
+                    string role = cmd.ExecuteScalar()?.ToString();
+                    if (role == "Administrator")
                     {
-                        string role = (string)reader["Role"];
-                        if (role == "Staff")
-                        {
-                            this.Close();
-                            UserDashboard staffDB = new UserDashboard();
-                            staffDB.ShowDialog();
-                        } else if (role == "Admin")
-                        {
-                            this.Close();
-                            Dashboard adminDB = new Dashboard();
-                            adminDB.ShowDialog();
-                        }
+                        this.Close();
+                        Dashboard adminDB = new Dashboard();
+                        adminDB.ShowDialog();
                     }
-                    
+                    else if (role == "Staff")
+                    {
+                        this.Close();
+                        UserDashboard userDB = new UserDashboard();
+                        userDB.ShowDialog();
+                    }
                     con.Close();
-
                 }
-                catch (Exception ex)
+
+                /*var cmd = con.CreateCommand();
+                cmd.CommandText = "Select Role from tbluseraccounts Where Username=@user and Pass=@password";
+                var up = cmd.CreateParameter();
+                up.ParameterName = "@user";
+                up.Value = txtUsername.Text;
+                cmd.Parameters.Add(up);
+                var pp = cmd.CreateParameter();
+                pp.ParameterName = "@password";
+                pp.Value = txtPassword.Text;
+                cmd.Parameters.Add(pp);
+
+                var role = cmd.ExecuteScalar() as string;
+
+                if (role == "Administrator")
                 {
-                    MessageBox.Show(ex.Message);
+                    lblForgot.Text = role;
+                } else if (role == "Staff")
+                {
+                    lblForgot.Text = role;
                 }
 
+
+                this.Close();
+                Dashboard dashboard = new Dashboard();
+                dashboard.ShowDialog();*/
             }
             else
             {
                 MessageBox.Show("Account does not exist.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
-    }
+        }
+    
 }
