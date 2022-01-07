@@ -189,8 +189,7 @@ namespace ComputerParts
         private void Dashboard_Load(object sender, EventArgs e)
         {
             timerDash.Enabled = true;
-            ItemList iList = new ItemList();
-            panel_main.Controls.Add(iList);
+            this.togglePanelMain("itemList");
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
