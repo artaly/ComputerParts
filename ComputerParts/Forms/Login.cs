@@ -63,44 +63,20 @@ namespace ComputerParts
                     string role = cmd.ExecuteScalar()?.ToString();
                     if (role == "Administrator")
                     {
+                        //lblForgot.Text = role;
                         this.Close();
                         Dashboard adminDB = new Dashboard();
                         adminDB.ShowDialog();
                     }
                     else if (role == "Staff")
                     {
+                        //lblForgot.Text = role;
                         this.Close();
                         UserDashboard userDB = new UserDashboard();
-                        userDB.ShowDialog();
+                        userDB.ShowDialog(); 
                     }
                     con.Close();
                 }
-
-                /*var cmd = con.CreateCommand();
-                cmd.CommandText = "Select Role from tbluseraccounts Where Username=@user and Pass=@password";
-                var up = cmd.CreateParameter();
-                up.ParameterName = "@user";
-                up.Value = txtUsername.Text;
-                cmd.Parameters.Add(up);
-                var pp = cmd.CreateParameter();
-                pp.ParameterName = "@password";
-                pp.Value = txtPassword.Text;
-                cmd.Parameters.Add(pp);
-
-                var role = cmd.ExecuteScalar() as string;
-
-                if (role == "Administrator")
-                {
-                    lblForgot.Text = role;
-                } else if (role == "Staff")
-                {
-                    lblForgot.Text = role;
-                }
-
-
-                this.Close();
-                Dashboard dashboard = new Dashboard();
-                dashboard.ShowDialog();*/
             }
             else
             {

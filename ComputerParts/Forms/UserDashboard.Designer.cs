@@ -42,7 +42,7 @@ namespace ComputerParts.Forms
             this.panel4 = new System.Windows.Forms.Panel();
             this.dshTime = new System.Windows.Forms.Label();
             this.dshDate = new System.Windows.Forms.Label();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel_main = new System.Windows.Forms.Panel();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.timerDash = new System.Windows.Forms.Timer(this.components);
@@ -50,7 +50,7 @@ namespace ComputerParts.Forms
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.panel_main.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -229,7 +229,7 @@ namespace ComputerParts.Forms
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(7)))), ((int)(((byte)(70)))));
             this.panel4.Controls.Add(this.dshTime);
             this.panel4.Controls.Add(this.dshDate);
-            this.panel4.Controls.Add(this.bunifuImageButton1);
+            this.panel4.Controls.Add(this.btnClose);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(330, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -261,29 +261,30 @@ namespace ComputerParts.Forms
             this.dshDate.TabIndex = 1;
             this.dshDate.Text = "Date Placeholder";
             // 
-            // bunifuImageButton1
+            // btnClose
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(7)))), ((int)(((byte)(70)))));
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(1907, 31);
-            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(26, 22);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 0;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(7)))), ((int)(((byte)(70)))));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.ImageActive = null;
+            this.btnClose.Location = new System.Drawing.Point(1907, 31);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(26, 22);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 0;
+            this.btnClose.TabStop = false;
+            this.btnClose.Zoom = 10;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel_main
             // 
             this.panel_main.BackColor = System.Drawing.SystemColors.Control;
             this.panel_main.Controls.Add(this.bunifuSeparator2);
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_main.Location = new System.Drawing.Point(396, 110);
+            this.panel_main.Location = new System.Drawing.Point(330, 92);
             this.panel_main.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(2374, 1409);
+            this.panel_main.Size = new System.Drawing.Size(1978, 1174);
             this.panel_main.TabIndex = 3;
             // 
             // bunifuSeparator2
@@ -318,7 +319,7 @@ namespace ComputerParts.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.panel_main.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -337,7 +338,7 @@ namespace ComputerParts.Forms
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label dshTime;
         private System.Windows.Forms.Label dshDate;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton btnClose;
         private System.Windows.Forms.Panel panel_main;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
         private System.Windows.Forms.Timer timerDash;

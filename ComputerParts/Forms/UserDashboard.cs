@@ -132,5 +132,10 @@ namespace ComputerParts.Forms
             Login login = new Login();
             login.Show();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.ExitThread();
+        }
     }
 }
