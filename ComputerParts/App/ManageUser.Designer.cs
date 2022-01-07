@@ -261,7 +261,6 @@ namespace ComputerParts.App
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(478, 38);
             this.txt_name.TabIndex = 53;
-            this.txt_name.UseSystemPasswordChar = true;
             // 
             // txt_username
             // 
@@ -271,7 +270,6 @@ namespace ComputerParts.App
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(478, 38);
             this.txt_username.TabIndex = 54;
-            this.txt_username.UseSystemPasswordChar = true;
             // 
             // ManageUser
             // 
