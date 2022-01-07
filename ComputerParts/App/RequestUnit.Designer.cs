@@ -99,7 +99,7 @@
             this.tbxFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbxFullName.isPassword = false;
             this.tbxFullName.Location = new System.Drawing.Point(40, 208);
-            this.tbxFullName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbxFullName.Margin = new System.Windows.Forms.Padding(6);
             this.tbxFullName.Name = "tbxFullName";
             this.tbxFullName.Size = new System.Drawing.Size(603, 66);
             this.tbxFullName.TabIndex = 59;
@@ -184,7 +184,7 @@
             this.tbxContactNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbxContactNo.isPassword = false;
             this.tbxContactNo.Location = new System.Drawing.Point(40, 439);
-            this.tbxContactNo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbxContactNo.Margin = new System.Windows.Forms.Padding(6);
             this.tbxContactNo.Name = "tbxContactNo";
             this.tbxContactNo.Size = new System.Drawing.Size(603, 66);
             this.tbxContactNo.TabIndex = 57;
@@ -212,7 +212,7 @@
             this.tbxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbxEmail.isPassword = false;
             this.tbxEmail.Location = new System.Drawing.Point(40, 328);
-            this.tbxEmail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbxEmail.Margin = new System.Windows.Forms.Padding(6);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(603, 66);
             this.tbxEmail.TabIndex = 53;
@@ -241,7 +241,7 @@
             this.tbxReqID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbxReqID.isPassword = false;
             this.tbxReqID.Location = new System.Drawing.Point(40, 108);
-            this.tbxReqID.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tbxReqID.Margin = new System.Windows.Forms.Padding(6);
             this.tbxReqID.Name = "tbxReqID";
             this.tbxReqID.Size = new System.Drawing.Size(603, 58);
             this.tbxReqID.TabIndex = 51;
@@ -300,7 +300,7 @@
             this.dtgReq.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtgReq.Name = "dtgReq";
             this.dtgReq.RowHeadersWidth = 51;
-            this.dtgReq.Size = new System.Drawing.Size(1051, 1121);
+            this.dtgReq.Size = new System.Drawing.Size(1192, 1121);
             this.dtgReq.TabIndex = 50;
             // 
             // RequestUnit

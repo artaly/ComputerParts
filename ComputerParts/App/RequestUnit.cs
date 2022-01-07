@@ -64,8 +64,7 @@ namespace ComputerParts.App
 
         protected void FillDataGridView()
         {
-            config.Load_DTG("SELECT `Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtgReq);
-
+            config.Load_DTG("SELECT * FROM tblrequests", dtgReq);
         }
         private void ClearTextBoxes(ControlCollection controls)
         {
