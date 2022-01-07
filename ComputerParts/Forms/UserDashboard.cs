@@ -137,5 +137,14 @@ namespace ComputerParts.Forms
         {
             System.Windows.Forms.Application.ExitThread();
         }
+
+        private void timerDash_Tick(object sender, EventArgs e)
+        {
+            DateTime time = DateTime.Now;
+            dshTime.Text = time.ToString("h:mm:ss tt");
+
+            DateTime date = DateTime.Now;
+            dshDate.Text = string.Format("{0:D}", date);
+        }
     }
 }

@@ -68,7 +68,7 @@ namespace ComputerParts.Forms
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(330, 1266);
+            this.panelSideMenu.Size = new System.Drawing.Size(330, 1102);
             this.panelSideMenu.TabIndex = 1;
             // 
             // btnLogOut
@@ -93,7 +93,7 @@ namespace ComputerParts.Forms
             this.btnLogOut.IconVisible = true;
             this.btnLogOut.IconZoom = 40D;
             this.btnLogOut.IsTab = false;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 1192);
+            this.btnLogOut.Location = new System.Drawing.Point(0, 1028);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(0);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Normalcolor = System.Drawing.Color.Transparent;
@@ -234,7 +234,7 @@ namespace ComputerParts.Forms
             this.panel4.Location = new System.Drawing.Point(330, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1978, 92);
+            this.panel4.Size = new System.Drawing.Size(1612, 92);
             this.panel4.TabIndex = 2;
             // 
             // dshTime
@@ -245,7 +245,7 @@ namespace ComputerParts.Forms
             this.dshTime.Location = new System.Drawing.Point(1691, 25);
             this.dshTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dshTime.Name = "dshTime";
-            this.dshTime.Size = new System.Drawing.Size(151, 33);
+            this.dshTime.Size = new System.Drawing.Size(120, 29);
             this.dshTime.TabIndex = 2;
             this.dshTime.Text = "h:mm:ss tt";
             // 
@@ -257,7 +257,7 @@ namespace ComputerParts.Forms
             this.dshDate.Location = new System.Drawing.Point(21, 25);
             this.dshDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dshDate.Name = "dshDate";
-            this.dshDate.Size = new System.Drawing.Size(238, 33);
+            this.dshDate.Size = new System.Drawing.Size(199, 29);
             this.dshDate.TabIndex = 1;
             this.dshDate.Text = "Date Placeholder";
             // 
@@ -284,7 +284,7 @@ namespace ComputerParts.Forms
             this.panel_main.Location = new System.Drawing.Point(330, 92);
             this.panel_main.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1978, 1174);
+            this.panel_main.Size = new System.Drawing.Size(1612, 1010);
             this.panel_main.TabIndex = 3;
             // 
             // bunifuSeparator2
@@ -300,11 +300,16 @@ namespace ComputerParts.Forms
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
             // 
+            // timerDash
+            // 
+            this.timerDash.Enabled = true;
+            this.timerDash.Tick += new System.EventHandler(this.timerDash_Tick);
+            // 
             // UserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2308, 1266);
+            this.ClientSize = new System.Drawing.Size(1942, 1102);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelSideMenu);
