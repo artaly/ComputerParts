@@ -51,6 +51,7 @@ namespace ComputerParts.App
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbxQuantity = new System.Windows.Forms.TextBox();
+            this.lbl_id = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_listItems)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -295,6 +296,7 @@ namespace ComputerParts.App
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_id);
             this.groupBox1.Controls.Add(this.tbxQuantity);
             this.groupBox1.Controls.Add(this.dtg_listItems);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
@@ -315,6 +317,18 @@ namespace ComputerParts.App
             this.tbxQuantity.Name = "tbxQuantity";
             this.tbxQuantity.Size = new System.Drawing.Size(1032, 29);
             this.tbxQuantity.TabIndex = 30;
+            // 
+            // lbl_id
+            // 
+            this.lbl_id.AutoSize = true;
+            this.lbl_id.Font = new System.Drawing.Font("Arial", 10F);
+            this.lbl_id.ForeColor = System.Drawing.Color.Transparent;
+            this.lbl_id.Location = new System.Drawing.Point(31, 27);
+            this.lbl_id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_id.Name = "lbl_id";
+            this.lbl_id.Size = new System.Drawing.Size(26, 19);
+            this.lbl_id.TabIndex = 61;
+            this.lbl_id.Text = "ID";
             // 
             // ManageItems
             // 
@@ -376,5 +390,6 @@ namespace ComputerParts.App
         internal System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
         internal System.Windows.Forms.TextBox tbxQuantity;
+        internal System.Windows.Forms.Label lbl_id;
     }
 }

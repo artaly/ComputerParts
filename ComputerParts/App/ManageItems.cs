@@ -86,7 +86,7 @@ namespace ComputerParts.App
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-            sql = "UPDATE `tblitems` SET  `BrandID`='" + cboBrand.SelectedValue + "', `Description`='" + txtDescription.Text + "', `PartsID`=" + cboParts.SelectedValue + ", `Quantity`=" + tbxQuantity.Text + ", `LocationID`=" + cboLocation.SelectedValue + ", `CompSetID`=" + cboCompSet.SelectedValue + ", `Status`='" + cboStatus.Text + "' WHERE  `Barcode`='" + txtBarcode.Text + "'";
+            sql = "UPDATE `tblitems` SET `Barcode`='" + txtBarcode.Text+ "', `BrandID`='" + cboBrand.SelectedValue + "', `Description`='" + txtDescription.Text + "', `PartsID`=" + cboParts.SelectedValue + ", `Quantity`=" + tbxQuantity.Text + ", `LocationID`=" + cboLocation.SelectedValue + ", `CompSetID`=" + cboCompSet.SelectedValue + ", `Status`='" + cboStatus.Text + "' WHERE  `ItemID`='" + lbl_id.Text+ "'";
             config.Execute_CUD(sql, "error to execute the query.", "Item updated successfully.");
             FillDataGridView();
         }
@@ -101,20 +101,22 @@ namespace ComputerParts.App
 
         protected void FillDataGridView()
         {
-            config.Load_DTG("SELECT `Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
+            config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
+            dtg_listItems.Columns[0].Visible = false;
 
         }
 
         private void dtg_listItems_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtBarcode.Text = dtg_listItems.CurrentRow.Cells[0].Value.ToString();
-            cboParts.Text = dtg_listItems.CurrentRow.Cells[1].Value.ToString();
-            cboBrand.Text = dtg_listItems.CurrentRow.Cells[2].Value.ToString();
-            tbxQuantity.Text = dtg_listItems.CurrentRow.Cells[3].Value.ToString();
-            txtDescription.Text = dtg_listItems.CurrentRow.Cells[4].Value.ToString();
-            cboLocation.Text = dtg_listItems.CurrentRow.Cells[5].Value.ToString();
-            cboCompSet.Text = dtg_listItems.CurrentRow.Cells[6].Value.ToString();
-            cboStatus.Text = dtg_listItems.CurrentRow.Cells[7].Value.ToString();
+            lbl_id.Text = dtg_listItems.CurrentRow.Cells[0].Value.ToString();
+            txtBarcode.Text = dtg_listItems.CurrentRow.Cells[1].Value.ToString();
+            cboParts.Text = dtg_listItems.CurrentRow.Cells[2].Value.ToString();
+            cboBrand.Text = dtg_listItems.CurrentRow.Cells[3].Value.ToString();
+            tbxQuantity.Text = dtg_listItems.CurrentRow.Cells[4].Value.ToString();
+            txtDescription.Text = dtg_listItems.CurrentRow.Cells[5].Value.ToString();
+            cboLocation.Text = dtg_listItems.CurrentRow.Cells[6].Value.ToString();
+            cboCompSet.Text = dtg_listItems.CurrentRow.Cells[7].Value.ToString();
+            cboStatus.Text = dtg_listItems.CurrentRow.Cells[8].Value.ToString();
             
         }
     }
