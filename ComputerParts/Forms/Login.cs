@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ComputerParts.Forms;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +17,9 @@ namespace ComputerParts
         SQLConfig config = new SQLConfig();
         string sql;
         int maxrow;
-
+        private MySqlConnection con = new MySqlConnection("server=localhost;user id=root;database=dbmonitoring;sslMode=none");
+        private MySqlCommand cmd;
+        private MySqlDataAdapter da;
         public Login()
         {
             InitializeComponent();
@@ -51,9 +55,41 @@ namespace ComputerParts
             maxrow = config.maxrow(sql);
             if (maxrow > 0)
             {
-                this.Close();
-                Dashboard dashboard = new Dashboard();
-                dashboard.ShowDialog();
+                try
+                {
+                    con.Open();
+                    MySqlDataReader reader = null;
+                    sql = "SELECT Role FROM  tbluseraccounts";
+
+                    MySqlCommand command = new MySqlCommand(sql, con);
+                    reader = command.ExecuteReader();
+
+
+
+                    while (reader.Read())
+                    {
+                        string role = (string)reader["Role"];
+                        if (role == "Staff")
+                        {
+                            this.Close();
+                            UserDashboard staffDB = new UserDashboard();
+                            staffDB.ShowDialog();
+                        } else if (role == "Admin")
+                        {
+                            this.Close();
+                            Dashboard adminDB = new Dashboard();
+                            adminDB.ShowDialog();
+                        }
+                    }
+                    
+                    con.Close();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
             else
             {
