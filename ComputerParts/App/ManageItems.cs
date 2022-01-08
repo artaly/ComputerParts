@@ -47,8 +47,8 @@ namespace ComputerParts.App
             bs.ResetBindings(false);
             //config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
             dtg_listItems.Columns[0].Visible = false;
-            //dtg_listItems.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-           // dtg_listItems.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            dtg_listItems.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+           dtg_listItems.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
         }
         private void ManageItems_Load(object sender, EventArgs e)
         {
@@ -121,9 +121,8 @@ namespace ComputerParts.App
             FillDataGridView();
         }
 
-        private void dtg_listItems_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dtg_listItems_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex > -1)
             {
                 DataGridViewRow Row = dtg_listItems.Rows[e.RowIndex];
@@ -138,10 +137,7 @@ namespace ComputerParts.App
                 cboStatus.Text = dtg_listItems.CurrentRow.Cells[8].Value.ToString();
 
             }
-
-
         }
-
     }
     }
 

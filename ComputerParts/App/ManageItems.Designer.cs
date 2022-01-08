@@ -49,9 +49,9 @@ namespace ComputerParts.App
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtg_listItems = new System.Windows.Forms.DataGridView();
             this.lbl_id = new System.Windows.Forms.Label();
             this.tbxQuantity = new System.Windows.Forms.TextBox();
+            this.dtg_listItems = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_listItems)).BeginInit();
             this.SuspendLayout();
@@ -288,25 +288,6 @@ namespace ComputerParts.App
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manage Items";
             // 
-            // dtg_listItems
-            // 
-            this.dtg_listItems.AllowUserToAddRows = false;
-            this.dtg_listItems.AllowUserToDeleteRows = false;
-            this.dtg_listItems.AllowUserToResizeColumns = false;
-            this.dtg_listItems.AllowUserToResizeRows = false;
-            this.dtg_listItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtg_listItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_listItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtg_listItems.Location = new System.Drawing.Point(32, 45);
-            this.dtg_listItems.Margin = new System.Windows.Forms.Padding(4);
-            this.dtg_listItems.Name = "dtg_listItems";
-            this.dtg_listItems.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            this.dtg_listItems.RowHeadersVisible = false;
-            this.dtg_listItems.RowHeadersWidth = 62;
-            this.dtg_listItems.Size = new System.Drawing.Size(1576, 473);
-            this.dtg_listItems.TabIndex = 62;
-            this.dtg_listItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_listItems_CellClick);
-            // 
             // lbl_id
             // 
             this.lbl_id.AutoSize = true;
@@ -327,6 +308,25 @@ namespace ComputerParts.App
             this.tbxQuantity.Name = "tbxQuantity";
             this.tbxQuantity.Size = new System.Drawing.Size(918, 29);
             this.tbxQuantity.TabIndex = 30;
+            // 
+            // dtg_listItems
+            // 
+            this.dtg_listItems.AllowUserToAddRows = false;
+            this.dtg_listItems.AllowUserToDeleteRows = false;
+            this.dtg_listItems.AllowUserToResizeColumns = false;
+            this.dtg_listItems.AllowUserToResizeRows = false;
+            this.dtg_listItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtg_listItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_listItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtg_listItems.Location = new System.Drawing.Point(42, 50);
+            this.dtg_listItems.Margin = new System.Windows.Forms.Padding(4);
+            this.dtg_listItems.Name = "dtg_listItems";
+            this.dtg_listItems.RowHeadersVisible = false;
+            this.dtg_listItems.RowHeadersWidth = 62;
+            this.dtg_listItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtg_listItems.Size = new System.Drawing.Size(1581, 462);
+            this.dtg_listItems.TabIndex = 63;
+            this.dtg_listItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_listItems_CellClick_1);
             // 
             // ManageItems
             // 
