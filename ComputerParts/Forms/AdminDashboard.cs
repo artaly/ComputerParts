@@ -162,6 +162,7 @@ namespace ComputerParts
             this.menu_active.Location = new Point(btnItemList.Location.X, btnItemList.Location.Y);
             this.togglePanelMain("itemList");
         }
+
         private void btnManageItems_Click(object sender, EventArgs e)
         {
             this.menu_active.Location = new Point(btnManageItems.Location.X, btnManageItems.Location.Y);
