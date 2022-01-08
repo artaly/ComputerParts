@@ -45,7 +45,7 @@ namespace ComputerParts.App
             "Maintenance",
             "Lost"});
             this.ComboBox1.Location = new System.Drawing.Point(1434, 22);
-            this.ComboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.ComboBox1.Name = "ComboBox1";
             this.ComboBox1.Size = new System.Drawing.Size(193, 24);
             this.ComboBox1.TabIndex = 16;
@@ -58,12 +58,12 @@ namespace ComputerParts.App
             this.dtgList.AllowUserToDeleteRows = false;
             this.dtgList.AllowUserToResizeColumns = false;
             this.dtgList.AllowUserToResizeRows = false;
-            this.dtgList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dtgList.Location = new System.Drawing.Point(26, 64);
-            this.dtgList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgList.Margin = new System.Windows.Forms.Padding(4);
             this.dtgList.Name = "dtgList";
             this.dtgList.RowHeadersVisible = false;
             this.dtgList.RowHeadersWidth = 62;
@@ -73,7 +73,7 @@ namespace ComputerParts.App
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(112, 20);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(1314, 22);
             this.txtSearch.TabIndex = 21;

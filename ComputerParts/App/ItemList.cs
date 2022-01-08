@@ -16,7 +16,6 @@ namespace ComputerParts.App
         public ItemList()
         {
             InitializeComponent();
-            FillDataGridView();
         }
 
         SQLConfig config = new SQLConfig();
@@ -25,8 +24,10 @@ namespace ComputerParts.App
 
         protected void FillDataGridView()
         {
-            config.Load_DTG("SELECT `Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtgList);
-
+            BindingSource bs = new BindingSource();
+            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
+            dtgList.DataSource = bs;
+            bs.ResetBindings(false);
         }
 
         public DataTable ConnectandReadList(string query)
@@ -44,24 +45,13 @@ namespace ComputerParts.App
 
         private void ItemList_Load(object sender, EventArgs e)
         {
-            txtSearch_TextChanged(sender, e);
             FillDataGridView();
-            BindingSource bs = new BindingSource();
-            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
-            dtgList.DataSource = bs;
-            bs.ResetBindings(false);
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            int itemid = int.Parse(dtgList.CurrentRow.Cells[0].Value.ToString());
-            Form frm = new EditItem(itemid);
-            frm.ShowDialog();
+            //txtSearch_TextChanged(sender, e);
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            sql = "SELECT  ItemID, `Barcode`,`Parts`,`Brand`, i.`Description`,`Location`, `ComputerSet`,Status "
+            sql = "SELECT  ItemID, `Barcode`,`Parts`,`Brand`, `Quantity`,i.`Description`,`Location`, `ComputerSet`,Status "
                 + " FROM `tblbrand` b,`tblitems` i, `tblparts` p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID "
                 + "AND (Status Like '%" + ComboBox1.Text + "%')";
             config.Load_DTG(sql, dtgList);
@@ -70,7 +60,7 @@ namespace ComputerParts.App
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            sql = "SELECT  ItemID, `Barcode`,`Parts`,`Brand`, i.`Description`,`Location`, `ComputerSet`,Status "
+            sql = "SELECT  ItemID, `Barcode`,`Parts`,`Brand`,`Quantity`, i.`Description`,`Location`, `ComputerSet`,Status "
                 + " FROM `tblbrand` b,`tblitems` i, `tblparts` p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID "
                 + "AND (Barcode Like '%" + txtSearch.Text + "%' OR Parts Like '%"
                 + txtSearch.Text + "%' OR Brand Like '%" + txtSearch.Text + "%' OR i.Description Like '%"

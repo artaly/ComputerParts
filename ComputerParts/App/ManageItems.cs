@@ -23,7 +23,6 @@ namespace ComputerParts.App
         usableFunction funct = new usableFunction();
         string sql;
         int maxrow;
-        private MySqlConnection con = new MySqlConnection("server=localhost;user id=root;database=dbmonitoring;sslMode=none");
         private MySqlCommand cmd;
         public DataTable dt;
 
@@ -55,10 +54,7 @@ namespace ComputerParts.App
         {
             btnNew_Click(sender, e);
             FillDataGridView();
-            BindingSource bs = new BindingSource();
-            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
-            dtg_listItems.DataSource = bs;
-            bs.ResetBindings(false);
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -98,6 +94,7 @@ namespace ComputerParts.App
             sql = "SELECT  CompSetID,ComputerSet FROM tblcompset";
             config.fiil_CBO(sql, cboCompSet);
             ClearTextBoxes(this.Controls);
+            FillDataGridView();
         }
 
         private void ClearTextBoxes(ControlCollection controls)
