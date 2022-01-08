@@ -42,6 +42,7 @@ namespace ComputerParts.App
 
         private void ManageItems_Load(object sender, EventArgs e)
         {
+            btnNew_Click(sender, e);
             FillDataGridView();
             BindingSource bs = new BindingSource();
             bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
