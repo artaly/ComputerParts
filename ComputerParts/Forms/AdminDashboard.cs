@@ -156,6 +156,7 @@ namespace ComputerParts
             this.menu_active.Location = new Point(btnTransfer.Location.X, btnTransfer.Location.Y);
             this.togglePanelMain("transferItem");
         }*/
+
         private void btnItemList_Click(object sender, EventArgs e)
         {
             this.menu_active.Location = new Point(btnItemList.Location.X, btnItemList.Location.Y);

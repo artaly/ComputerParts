@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,21 +16,40 @@ namespace ComputerParts.App
         public ItemList()
         {
             InitializeComponent();
+            FillDataGridView();
         }
 
         SQLConfig config = new SQLConfig();
-        usableFunction funct = new usableFunction();
         string sql;
+        public DataTable dt;
 
         protected void FillDataGridView()
         {
             config.Load_DTG("SELECT `Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtgList);
 
         }
+
+        public DataTable ConnectandReadList(string query)
+        {
+            DataTable ds = new DataTable();
+            using (var myConnection = new MySqlConnection("server=localhost;user id=root;database=dbmonitoring;sslMode=none"))
+            {
+                myConnection.Open();
+                var cmd = new MySqlCommand(query, myConnection);
+                var adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(ds);
+            }
+            return ds;
+        }
+
         private void ItemList_Load(object sender, EventArgs e)
         {
             txtSearch_TextChanged(sender, e);
             FillDataGridView();
+            BindingSource bs = new BindingSource();
+            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
+            dtgList.DataSource = bs;
+            bs.ResetBindings(false);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

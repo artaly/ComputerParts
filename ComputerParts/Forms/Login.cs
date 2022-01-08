@@ -51,39 +51,63 @@ namespace ComputerParts
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            sql = "SELECT * FROM `tbluseraccounts` WHERE Username= '" + txtUsername.Text + "' and Pass = sha1('" + txtPassword.Text + "')";
-            maxrow = config.maxrow(sql);
-            if (maxrow > 0)
+            sql = "Select Role from tbluseraccounts WHERE Username=@user";
+            using (MySqlCommand cmd = new MySqlCommand(sql, con))
             {
-                sql = "Select Role from tbluseraccounts WHERE Username=@user";
-                using (MySqlCommand  cmd = new MySqlCommand(sql, con))
-                {
-                    cmd.Parameters.AddWithValue("@user", txtUsername.Text);
-                    con.Open();
-                    string role = cmd.ExecuteScalar()?.ToString();
-                    if (role == "Administrator")
-                    {
-                        //lblForgot.Text = role;
-                        this.Close();
-                        Dashboard adminDB = new Dashboard();
-                        adminDB.ShowDialog();
-                    }
-                    else if (role == "Staff")
-                    {
-                        //lblForgot.Text = role;
-                        this.Close();
-                        UserDashboard userDB = new UserDashboard();
-                        userDB.ShowDialog(); 
-                    }
-                    con.Close();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Account does not exist.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                cmd.Parameters.AddWithValue("@user", txtUsername.Text);
+                con.Open();
+                string role = cmd.ExecuteScalar()?.ToString();
 
+                switch (role)
+                {
+                    case "Administrator":
+                        sql = "SELECT Username, Pass FROM `tbluseraccounts` WHERE Username= '" + txtUsername.Text + "' and Pass = sha1('" + txtPassword.Text + "')";
+                        maxrow = config.maxrow(sql);
+                        if (maxrow > 0)
+                        {
+                            this.Close();
+                            Dashboard adminDB = new Dashboard();
+                            adminDB.ShowDialog();
+                            break;
+                        } else
+                        {
+                            MessageBox.Show("Account does not exist.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case "Staff":
+                        sql = "SELECT Username, Pass FROM `tbluseraccounts` WHERE Username= '" + txtUsername.Text + "' and Pass = sha1('" + txtPassword.Text + "')";
+                        maxrow = config.maxrow(sql);
+                        if (maxrow > 0)
+                        {
+                            this.Close();
+                            UserDashboard userDB = new UserDashboard();
+                            userDB.ShowDialog();
+                            break;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Account does not exist.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    default:
+                        sql = "SELECT * FROM `tbluseraccounts` WHERE Username= '" + txtUsername.Text + "' and Pass = sha1('" + txtPassword.Text + "')";
+                        maxrow = config.maxrow(sql);
+                        if (maxrow > 0)
+                        {
+                            this.Close();
+                            UserDashboard userDB = new UserDashboard();
+                            userDB.ShowDialog();
+                            break;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Account does not exist.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                }
+                con.Close();
+            }
         }
-        }
-    
+    }
 }
+              

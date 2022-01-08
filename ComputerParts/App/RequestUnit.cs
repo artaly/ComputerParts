@@ -14,12 +14,9 @@ namespace ComputerParts.App
     public partial class RequestUnit : UserControl
     {
         SQLConfig config = new SQLConfig();
-        usableFunction funct = new usableFunction();
         string sql;
-        int maxrow;
         private MySqlConnection con = new MySqlConnection("server=localhost;user id=root;database=dbmonitoring;sslMode=none");
         private MySqlCommand cmd;
-        private MySqlDataAdapter da;
         public DataTable dt;
         public RequestUnit()
         {
