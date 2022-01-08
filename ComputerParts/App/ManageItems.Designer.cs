@@ -294,6 +294,7 @@ namespace ComputerParts.App
             this.dtg_listItems.AllowUserToDeleteRows = false;
             this.dtg_listItems.AllowUserToResizeColumns = false;
             this.dtg_listItems.AllowUserToResizeRows = false;
+            this.dtg_listItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_listItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_listItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dtg_listItems.Location = new System.Drawing.Point(32, 45);

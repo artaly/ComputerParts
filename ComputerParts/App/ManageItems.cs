@@ -40,6 +40,17 @@ namespace ComputerParts.App
             return ds;
         }
 
+        protected void FillDataGridView()
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
+            dtg_listItems.DataSource = bs;
+            bs.ResetBindings(false);
+            //config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
+            dtg_listItems.Columns[0].Visible = false;
+            dtg_listItems.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            dtg_listItems.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+        }
         private void ManageItems_Load(object sender, EventArgs e)
         {
             btnNew_Click(sender, e);
@@ -78,8 +89,6 @@ namespace ComputerParts.App
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            funct.clearTxt(this);
-
             sql = "SELECT PartsID, Parts FROM tblparts";
             config.fiil_CBO(sql, cboParts);
             sql = "SELECT BrandID,  Brand FROM tblbrand";
@@ -89,8 +98,6 @@ namespace ComputerParts.App
             sql = "SELECT  CompSetID,ComputerSet FROM tblcompset";
             config.fiil_CBO(sql, cboCompSet);
             ClearTextBoxes(this.Controls);
-            FillDataGridView();
-
         }
 
         private void ClearTextBoxes(ControlCollection controls)
@@ -115,17 +122,6 @@ namespace ComputerParts.App
             config.Execute_CUD(sql, "error to execute the query.", "Item has been deleted in the database.");
             btnNew_Click(sender, e);
             FillDataGridView();
-        }
-
-
-        protected void FillDataGridView()
-        {
-            
-            config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
-            dtg_listItems.Columns[0].Visible = false;
-            dtg_listItems.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            dtg_listItems.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-
         }
 
         private void dtg_listItems_CellClick(object sender, DataGridViewCellEventArgs e)
