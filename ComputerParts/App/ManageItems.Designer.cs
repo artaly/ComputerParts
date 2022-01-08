@@ -300,6 +300,7 @@ namespace ComputerParts.App
             this.dtg_listItems.Location = new System.Drawing.Point(32, 45);
             this.dtg_listItems.Margin = new System.Windows.Forms.Padding(4);
             this.dtg_listItems.Name = "dtg_listItems";
+            this.dtg_listItems.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             this.dtg_listItems.RowHeadersVisible = false;
             this.dtg_listItems.RowHeadersWidth = 62;
             this.dtg_listItems.Size = new System.Drawing.Size(1576, 473);

@@ -47,8 +47,8 @@ namespace ComputerParts.App
             bs.ResetBindings(false);
             //config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
             dtg_listItems.Columns[0].Visible = false;
-            dtg_listItems.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            dtg_listItems.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            //dtg_listItems.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+           // dtg_listItems.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
         }
         private void ManageItems_Load(object sender, EventArgs e)
         {
@@ -123,15 +123,23 @@ namespace ComputerParts.App
 
         private void dtg_listItems_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            lbl_id.Text = dtg_listItems.CurrentRow.Cells[0].Value.ToString();
-            txtBarcode.Text = dtg_listItems.CurrentRow.Cells[1].Value.ToString();
-            cboParts.Text = dtg_listItems.CurrentRow.Cells[2].Value.ToString();
-            cboBrand.Text = dtg_listItems.CurrentRow.Cells[3].Value.ToString();
-            tbxQuantity.Text = dtg_listItems.CurrentRow.Cells[4].Value.ToString();
-            txtDescription.Text = dtg_listItems.CurrentRow.Cells[5].Value.ToString();
-            cboLocation.Text = dtg_listItems.CurrentRow.Cells[6].Value.ToString();
-            cboCompSet.Text = dtg_listItems.CurrentRow.Cells[7].Value.ToString();
-            cboStatus.Text = dtg_listItems.CurrentRow.Cells[8].Value.ToString();
+
+            if (e.RowIndex > -1)
+            {
+                DataGridViewRow Row = dtg_listItems.Rows[e.RowIndex];
+                lbl_id.Text = dtg_listItems.CurrentRow.Cells[0].Value.ToString();
+                txtBarcode.Text = dtg_listItems.CurrentRow.Cells[1].Value.ToString();
+                cboParts.Text = dtg_listItems.CurrentRow.Cells[2].Value.ToString();
+                cboBrand.Text = dtg_listItems.CurrentRow.Cells[3].Value.ToString();
+                tbxQuantity.Text = dtg_listItems.CurrentRow.Cells[4].Value.ToString();
+                txtDescription.Text = dtg_listItems.CurrentRow.Cells[5].Value.ToString();
+                cboLocation.Text = dtg_listItems.CurrentRow.Cells[6].Value.ToString();
+                cboCompSet.Text = dtg_listItems.CurrentRow.Cells[7].Value.ToString();
+                cboStatus.Text = dtg_listItems.CurrentRow.Cells[8].Value.ToString();
+
+            }
+
+
         }
 
     }
