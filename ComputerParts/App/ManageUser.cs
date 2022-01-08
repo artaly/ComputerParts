@@ -19,7 +19,6 @@ namespace ComputerParts.App
         SQLConfig config = new SQLConfig();
         usableFunction funct = new usableFunction();
         string sql;
-        int CompSetID, maxrow;
 
         private void dtg_listUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {

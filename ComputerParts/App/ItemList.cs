@@ -24,11 +24,13 @@ namespace ComputerParts.App
 
         protected void FillDataGridView()
         {
-            BindingSource bs = new BindingSource();
+            /*BindingSource bs = new BindingSource();
             bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
             dtgList.DataSource = bs;
-            bs.ResetBindings(false);
-            
+            bs.ResetBindings(false);*/
+            config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l, tblcompset c WHERE b.`BrandID`= i.`BrandID` AND i.`PartsID`= p.`PartsID` AND i.`LocationID`= l.`LocationID` AND i.CompSetID = c.CompSetID", dtgList);
+
+
         }
 
         public DataTable ConnectandReadList(string query)
