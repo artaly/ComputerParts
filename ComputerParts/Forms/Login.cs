@@ -51,63 +51,38 @@ namespace ComputerParts
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            sql = "Select Role from tbluseraccounts WHERE Username=@user";
-            using (MySqlCommand cmd = new MySqlCommand(sql, con))
-            {
-                cmd.Parameters.AddWithValue("@user", txtUsername.Text);
-                con.Open();
-                string role = cmd.ExecuteScalar()?.ToString();
+            MySqlConnection con = new MySqlConnection("server=localhost;user id=root;database=dbmonitoring;sslMode=none");
+            cmd = new MySqlCommand("SELECT * FROM `tbluseraccounts` WHERE Username = '" + txtUsername.Text + "' and Pass = sha1('" + txtPassword.Text + "')", con);
+            con.Open();
+            MySqlDataReader myReader;
+            myReader = cmd.ExecuteReader();
+            int count = 0;
+            string role = string.Empty;
 
-                switch (role)
-                {
-                    case "Administrator":
-                        sql = "SELECT Username, Pass FROM `tbluseraccounts` WHERE Username= '" + txtUsername.Text + "' and Pass = sha1('" + txtPassword.Text + "')";
-                        maxrow = config.maxrow(sql);
-                        if (maxrow > 0)
-                        {
-                            this.Close();
-                            Dashboard adminDB = new Dashboard();
-                            adminDB.ShowDialog();
-                            break;
-                        } else
-                        {
-                            MessageBox.Show("Account does not exist.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        break;
-                    case "Staff":
-                        sql = "SELECT Username, Pass FROM `tbluseraccounts` WHERE Username= '" + txtUsername.Text + "' and Pass = sha1('" + txtPassword.Text + "')";
-                        maxrow = config.maxrow(sql);
-                        if (maxrow > 0)
-                        {
-                            this.Close();
-                            UserDashboard userDB = new UserDashboard();
-                            userDB.ShowDialog();
-                            break;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Account does not exist.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        break;
-                    default:
-                        sql = "SELECT * FROM `tbluseraccounts` WHERE Username= '" + txtUsername.Text + "' and Pass = sha1('" + txtPassword.Text + "')";
-                        maxrow = config.maxrow(sql);
-                        if (maxrow > 0)
-                        {
-                            this.Close();
-                            UserDashboard userDB = new UserDashboard();
-                            userDB.ShowDialog();
-                            break;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Account does not exist.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        break;
+            while (myReader.Read())
+            {
+                count = count + 1;
+                role = myReader["Role"].ToString();
+            }
+            if (count == 1)
+            {
+                this.Hide();
+                if (role == "Staff") {
+                    UserDashboard userDB = new UserDashboard();
+                    userDB.ShowDialog();
                 }
-                con.Close();
+                else
+                {
+                    Dashboard adminDB = new Dashboard();
+                    adminDB.ShowDialog();
+                }
+                           
             }
         }
     }
 }
-              
+
+
+         
+
+            
