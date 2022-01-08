@@ -138,8 +138,8 @@ namespace ComputerParts.App
             cboLocation.Text = dtg_listItems.CurrentRow.Cells[6].Value.ToString();
             cboCompSet.Text = dtg_listItems.CurrentRow.Cells[7].Value.ToString();
             cboStatus.Text = dtg_listItems.CurrentRow.Cells[8].Value.ToString();
-            
         }
+
     }
     }
 
