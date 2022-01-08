@@ -30,9 +30,9 @@ namespace ComputerParts.App
         private void InitializeComponent()
         {
             this.ComboBox1 = new System.Windows.Forms.ComboBox();
-            this.dtgList = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
+            this.dtgList = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dtgList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,24 +51,6 @@ namespace ComputerParts.App
             this.ComboBox1.TabIndex = 16;
             this.ComboBox1.Text = "Select Status";
             this.ComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
-            // 
-            // dtgList
-            // 
-            this.dtgList.AllowUserToAddRows = false;
-            this.dtgList.AllowUserToDeleteRows = false;
-            this.dtgList.AllowUserToResizeColumns = false;
-            this.dtgList.AllowUserToResizeRows = false;
-            this.dtgList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dtgList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtgList.Location = new System.Drawing.Point(26, 64);
-            this.dtgList.Margin = new System.Windows.Forms.Padding(4);
-            this.dtgList.Name = "dtgList";
-            this.dtgList.RowHeadersVisible = false;
-            this.dtgList.RowHeadersWidth = 62;
-            this.dtgList.Size = new System.Drawing.Size(1631, 866);
-            this.dtgList.TabIndex = 17;
             // 
             // txtSearch
             // 
@@ -90,13 +72,31 @@ namespace ComputerParts.App
             this.Label2.TabIndex = 20;
             this.Label2.Text = "Search :";
             // 
+            // dtgList
+            // 
+            this.dtgList.AllowUserToAddRows = false;
+            this.dtgList.AllowUserToDeleteRows = false;
+            this.dtgList.AllowUserToResizeColumns = false;
+            this.dtgList.AllowUserToResizeRows = false;
+            this.dtgList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtgList.Location = new System.Drawing.Point(26, 68);
+            this.dtgList.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgList.Name = "dtgList";
+            this.dtgList.RowHeadersVisible = false;
+            this.dtgList.RowHeadersWidth = 62;
+            this.dtgList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgList.Size = new System.Drawing.Size(1637, 892);
+            this.dtgList.TabIndex = 45;
+            // 
             // ItemList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dtgList);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.Label2);
-            this.Controls.Add(this.dtgList);
             this.Controls.Add(this.ComboBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ItemList";
@@ -111,8 +111,8 @@ namespace ComputerParts.App
         #endregion
 
         internal System.Windows.Forms.ComboBox ComboBox1;
-        internal System.Windows.Forms.DataGridView dtgList;
         internal System.Windows.Forms.TextBox txtSearch;
         internal System.Windows.Forms.Label Label2;
+        internal System.Windows.Forms.DataGridView dtgList;
     }
 }
