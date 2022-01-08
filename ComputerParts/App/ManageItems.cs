@@ -122,6 +122,8 @@ namespace ComputerParts.App
             
             config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
             dtg_listItems.Columns[0].Visible = false;
+            dtg_listItems.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            dtg_listItems.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
 
         }
 
