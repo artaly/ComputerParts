@@ -119,10 +119,6 @@ namespace ComputerParts.App
             sql = "UPDATE `tblitems` SET `Barcode`='" + txtBarcode.Text+ "', `BrandID`='" + cboBrand.SelectedValue + "', `Description`='" + txtDescription.Text + "', `PartsID`=" + cboParts.SelectedValue + ", `Quantity`=" + tbxQuantity.Text + ", `LocationID`=" + cboLocation.SelectedValue + ", `CompSetID`=" + cboCompSet.SelectedValue + ", `Status`='" + cboStatus.Text + "' WHERE  `ItemID`='" + lbl_id.Text+ "'";
             config.Execute_CUD(sql, "error to execute the query.", "Item updated successfully.");
             FillDataGridView();
-            ItemList itemList = new ItemList();
-            itemList.FillDataGridView();
-            itemList.dtgList.Update();
-            itemList.Refresh();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -132,10 +128,7 @@ namespace ComputerParts.App
             btnNew_Click(sender, e);
             FillDataGridView();
             ItemList itemList = new ItemList();
-            BindingSource bs = new BindingSource();
-            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
-            itemList.dtgList.DataSource = bs;
-            itemList.dtgList.Refresh();
+            
         }
 
         private void dtg_listItems_CellClick_1(object sender, DataGridViewCellEventArgs e)
