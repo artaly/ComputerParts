@@ -162,24 +162,7 @@ namespace ComputerParts
         {
             this.menu_active.Location = new Point(btnItemList.Location.X, btnItemList.Location.Y);
             this.togglePanelMain("itemList");
-            ItemList itemList = new ItemList();
-            BindingSource bs = new BindingSource();
-            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
-            itemList.dtgList.DataSource = bs;
-            itemList.dtgList.Refresh();
 
-        }
-        public DataTable ConnectandReadList(string query)
-        {
-            DataTable ds = new DataTable();
-            using (var myConnection = new MySqlConnection("server=localhost;user id=root;database=dbmonitoring;sslMode=none"))
-            {
-                myConnection.Open();
-                var cmd = new MySqlCommand(query, myConnection);
-                var adapter = new MySqlDataAdapter(cmd);
-                adapter.Fill(ds);
-            }
-            return ds;
         }
 
         private void btnManageItems_Click(object sender, EventArgs e)
