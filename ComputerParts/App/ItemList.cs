@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace ComputerParts.App
@@ -15,24 +16,36 @@ namespace ComputerParts.App
     {
         public ItemList()
         {
-            InitializeComponent();
+            InitializeComponent();        
         }
 
         SQLConfig config = new SQLConfig();
         string sql;
         public DataTable dt;
+        private MySqlConnection con = new MySqlConnection("server=localhost;user id=root;database=dbmonitoring;sslMode=none");
 
-        protected void FillDataGridView()
+        public void FillDataGridView()
         {
             /*BindingSource bs = new BindingSource();
             bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
             dtgList.DataSource = bs;
             bs.ResetBindings(false);*/
-            config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l, tblcompset c WHERE b.`BrandID`= i.`BrandID` AND i.`PartsID`= p.`PartsID` AND i.`LocationID`= l.`LocationID` AND i.CompSetID = c.CompSetID", dtgList);
+            //config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l, tblcompset c WHERE b.`BrandID`= i.`BrandID` AND i.`PartsID`= p.`PartsID` AND i.`LocationID`= l.`LocationID` AND i.CompSetID = c.CompSetID", dtgList);
+            con.Open();
+            MySqlDataAdapter MyDA = new MySqlDataAdapter();
+            string sqlSelectAll = "SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l, tblcompset c WHERE b.`BrandID`= i.`BrandID` AND i.`PartsID`= p.`PartsID` AND i.`LocationID`= l.`LocationID` AND i.CompSetID = c.CompSetID";
+            MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, con);
+
+            DataTable table = new DataTable();
+            MyDA.Fill(table);
+
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = table;
 
 
+            dtgList.DataSource = bSource;
+            con.Close();
         }
-
         public DataTable ConnectandReadList(string query)
         {
             DataTable ds = new DataTable();
@@ -48,9 +61,10 @@ namespace ComputerParts.App
 
         private void ItemList_Load(object sender, EventArgs e)
         {
-            FillDataGridView();
             //txtSearch_TextChanged(sender, e);
-        }
+            FillDataGridView();
+        
+            }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
