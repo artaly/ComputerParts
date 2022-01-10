@@ -33,6 +33,7 @@ namespace ComputerParts.App
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
             this.dtgList = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@ namespace ComputerParts.App
             "Damage",
             "Maintenance",
             "Lost"});
-            this.ComboBox1.Location = new System.Drawing.Point(1434, 22);
+            this.ComboBox1.Location = new System.Drawing.Point(1376, 20);
             this.ComboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.ComboBox1.Name = "ComboBox1";
             this.ComboBox1.Size = new System.Drawing.Size(193, 24);
@@ -57,7 +58,7 @@ namespace ComputerParts.App
             this.txtSearch.Location = new System.Drawing.Point(112, 20);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(1314, 22);
+            this.txtSearch.Size = new System.Drawing.Size(1256, 22);
             this.txtSearch.TabIndex = 21;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -90,10 +91,21 @@ namespace ComputerParts.App
             this.dtgList.Size = new System.Drawing.Size(1637, 892);
             this.dtgList.TabIndex = 45;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(1592, 16);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(96, 30);
+            this.btnRefresh.TabIndex = 46;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // ItemList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dtgList);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.Label2);
@@ -114,5 +126,6 @@ namespace ComputerParts.App
         internal System.Windows.Forms.TextBox txtSearch;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.DataGridView dtgList;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

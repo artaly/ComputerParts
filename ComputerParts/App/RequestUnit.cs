@@ -56,7 +56,6 @@ namespace ComputerParts.App
             sql = "select Description from tblitems";
             config.autocomplete(sql, tbxItemToReq);
             FillDataGridView();
-
         }
 
         protected void FillDataGridView()

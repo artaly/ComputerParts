@@ -31,14 +31,12 @@ namespace ComputerParts.App
 
         public void FillDataGridView()
         {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
-            dtgList.DataSource = bs;
-            bs.ResetBindings(true);
-            /*BindingSource bs = new BindingSource();
-           DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
+           
+           BindingSource bs = new BindingSource();
+           bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
+           dtgList.DataSource = null;
            dtgList.DataSource = bs;
-           bs.ResetBindings(false); 
+           // bs.ResetBindings(false); 
            //config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l, tblcompset c WHERE b.`BrandID`= i.`BrandID` AND i.`PartsID`= p.`PartsID` AND i.`LocationID`= l.`LocationID` AND i.CompSetID = c.CompSetID", dtgList);
            /*con.Open();
            MySqlDataAdapter MyDA = new MySqlDataAdapter();
@@ -70,7 +68,8 @@ namespace ComputerParts.App
         private void ItemList_Load(object sender, EventArgs e)
         {
             txtSearch_TextChanged(sender, e);
-            //FillDataGridView();
+            btnRefresh_Click(sender, e);
+            FillDataGridView();
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -93,5 +92,12 @@ namespace ComputerParts.App
           //  dtgList.Columns[0].Visible = false;
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
+            dtgList.DataSource = null;
+            dtgList.DataSource = bs;
+        }
     }   
 }
