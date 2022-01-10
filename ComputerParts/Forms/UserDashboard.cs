@@ -15,6 +15,7 @@ namespace ComputerParts.Forms
     {
         private ItemList itemList;
         private RequestUnit requestUnit;
+        private ManageItems manageItems;
 
         public UserDashboard()
         {

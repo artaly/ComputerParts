@@ -13,18 +13,32 @@ namespace ComputerParts.App
 {
     public partial class ManageItems : UserControl
     {
-        public ManageItems()
-        {
-            InitializeComponent();
-            FillDataGridView();
-
-        }
         SQLConfig config = new SQLConfig();
         usableFunction funct = new usableFunction();
         string sql;
         int maxrow;
         private MySqlCommand cmd;
-        public DataTable dt;
+        private MySqlDataAdapter da;
+        private DataSet ds = new DataSet();
+        private DataTable dt = new DataTable();
+        private MySqlConnection con = new MySqlConnection("server=localhost;user id=root;database=dbmonitoring;sslMode=none");
+        BindingSource bs = new BindingSource();
+
+        public ManageItems()
+        {
+            InitializeComponent();
+        }
+        public void FillDataGridView()
+        {
+            BindingSource bs = new BindingSource();
+            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
+            dtg_listItems.DataSource = bs;
+            //bs.ResetBindings(false);
+            //config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
+            dtg_listItems.Columns[0].Visible = false;
+            dtg_listItems.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            dtg_listItems.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+        }
 
         public DataTable ConnectandReadList(string query)
         {
@@ -39,23 +53,10 @@ namespace ComputerParts.App
             return ds;
         }
 
-        public void FillDataGridView()
-        {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
-            dtg_listItems.DataSource = bs;
-            bs.ResetBindings(false);
-            //config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID", dtg_listItems);
-            dtg_listItems.Columns[0].Visible = false;
-            dtg_listItems.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-           dtg_listItems.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-        }
-
         private void ManageItems_Load(object sender, EventArgs e)
         {
-            btnNew_Click(sender, e);
+            btnNew_Click(sender, e);    
             FillDataGridView();
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -79,16 +80,9 @@ namespace ComputerParts.App
          " VALUES ('" + txtBarcode.Text + "'," + cboBrand.SelectedValue + ",'" + txtDescription.Text + "'," + cboParts.SelectedValue + ",Date(Now())," + cboLocation.SelectedValue + ",'"+ tbxQuantity.Text+ "'," + cboCompSet.SelectedValue + ",'" + cboStatus.Text + "')";
                 config.Execute_CUD(sql, "error to execute the query.", "New item created successfully.");
             }
-
             btnNew_Click(sender, e);
-
-            ItemList itemList = new ItemList();
-            BindingSource bs = new BindingSource();
-            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
-            itemList.dtgList.DataSource = bs;
-            itemList.dtgList.Refresh();
-
             FillDataGridView();
+
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -102,7 +96,7 @@ namespace ComputerParts.App
             sql = "SELECT  CompSetID,ComputerSet FROM tblcompset";
             config.fiil_CBO(sql, cboCompSet);
             ClearTextBoxes(this.Controls);
-            FillDataGridView();
+            //FillDataGridView();
         }
 
         private void ClearTextBoxes(ControlCollection controls)
@@ -115,10 +109,15 @@ namespace ComputerParts.App
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            
             sql = "UPDATE `tblitems` SET `Barcode`='" + txtBarcode.Text+ "', `BrandID`='" + cboBrand.SelectedValue + "', `Description`='" + txtDescription.Text + "', `PartsID`=" + cboParts.SelectedValue + ", `Quantity`=" + tbxQuantity.Text + ", `LocationID`=" + cboLocation.SelectedValue + ", `CompSetID`=" + cboCompSet.SelectedValue + ", `Status`='" + cboStatus.Text + "' WHERE  `ItemID`='" + lbl_id.Text+ "'";
             config.Execute_CUD(sql, "error to execute the query.", "Item updated successfully.");
             FillDataGridView();
+            ItemList itemList = new ItemList();
+            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
+            itemList.dtgList.DataSource = bs;
+            itemList.bs.ResetBindings(true);
+            itemList.FillDataGridView();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -127,7 +126,6 @@ namespace ComputerParts.App
             config.Execute_CUD(sql, "error to execute the query.", "Item has been deleted in the database.");
             btnNew_Click(sender, e);
             FillDataGridView();
-            ItemList itemList = new ItemList();
             
         }
 

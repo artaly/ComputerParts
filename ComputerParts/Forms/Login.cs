@@ -78,6 +78,7 @@ namespace ComputerParts
                 }
                            
             }
+            con.Close();
         }
     }
 }
