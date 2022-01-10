@@ -19,8 +19,7 @@ namespace ComputerParts
         private ItemList itemList;
         private ManageItems manageItems;
         private RequestUnit requestUnit;
-
-
+        public BindingSource bs = new BindingSource();
 
         public Dashboard()
         {
@@ -29,13 +28,11 @@ namespace ComputerParts
 
         private void btnResetColor()
         {
-            //this.btnTransfer.Normalcolor = Color.Transparent;
             this.btnManageUsers.Normalcolor = Color.Transparent;
             this.btnItemList.Normalcolor = Color.Transparent;
             this.btnManageItems.Normalcolor = Color.Transparent;
 
         }
-
         internal void togglePanelMain(string panelName)
         {
             this.btnResetColor();
@@ -152,19 +149,12 @@ namespace ComputerParts
             }
         }
 
-        /*private void btnTransfer_Click(object sender, EventArgs e)
-        {
-            this.menu_active.Location = new Point(btnTransfer.Location.X, btnTransfer.Location.Y);
-            this.togglePanelMain("transferItem");
-        }*/
 
         private void btnItemList_Click(object sender, EventArgs e)
         {
             this.menu_active.Location = new Point(btnItemList.Location.X, btnItemList.Location.Y);
             this.togglePanelMain("itemList");
-
         }
-
         private void btnManageItems_Click(object sender, EventArgs e)
         {
             this.menu_active.Location = new Point(btnManageItems.Location.X, btnManageItems.Location.Y);

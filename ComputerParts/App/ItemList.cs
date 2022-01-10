@@ -36,26 +36,24 @@ namespace ComputerParts.App
             dtgList.DataSource = bs;
             bs.ResetBindings(true);
             /*BindingSource bs = new BindingSource();
-            bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
-            dtgList.DataSource = bs;
-            bs.ResetBindings(false);*/
-            //config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l, tblcompset c WHERE b.`BrandID`= i.`BrandID` AND i.`PartsID`= p.`PartsID` AND i.`LocationID`= l.`LocationID` AND i.CompSetID = c.CompSetID", dtgList);
-            /*con.Open();
-            MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            string sqlSelectAll = "SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l, tblcompset c WHERE b.`BrandID`= i.`BrandID` AND i.`PartsID`= p.`PartsID` AND i.`LocationID`= l.`LocationID` AND i.CompSetID = c.CompSetID";
-            MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, con);
+           DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
+           dtgList.DataSource = bs;
+           bs.ResetBindings(false); 
+           //config.Load_DTG("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l, tblcompset c WHERE b.`BrandID`= i.`BrandID` AND i.`PartsID`= p.`PartsID` AND i.`LocationID`= l.`LocationID` AND i.CompSetID = c.CompSetID", dtgList);
+           /*con.Open();
+           MySqlDataAdapter MyDA = new MySqlDataAdapter();
+           string sqlSelectAll = "SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l, tblcompset c WHERE b.`BrandID`= i.`BrandID` AND i.`PartsID`= p.`PartsID` AND i.`LocationID`= l.`LocationID` AND i.CompSetID = c.CompSetID";
+           MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, con);
 
-            DataTable table = new DataTable();
-            MyDA.Fill(table);
+           DataTable table = new DataTable();
+           MyDA.Fill(table);
 
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = table;
-
-
-            dtgList.DataSource = bSource;
-            con.Close();*/
+           BindingSource bSource = new BindingSource();
+           bSource.DataSource = table;
+           dtgList.DataSource = bSource;
+           con.Close();*/
         }
-        
+
         public DataTable ConnectandReadList(string query)
         {
             DataTable ds = new DataTable();
@@ -72,7 +70,7 @@ namespace ComputerParts.App
         private void ItemList_Load(object sender, EventArgs e)
         {
             txtSearch_TextChanged(sender, e);
-            FillDataGridView();
+            //FillDataGridView();
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,8 +78,8 @@ namespace ComputerParts.App
             sql = "SELECT  ItemID, `Barcode`,`Parts`,`Brand`, `Quantity`,i.`Description`,`Location`, `ComputerSet`,Status "
                 + " FROM `tblbrand` b,`tblitems` i, `tblparts` p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID "
                 + "AND (Status Like '%" + ComboBox1.Text + "%')";
-            config.Load_DTG(sql, dtgList);
-            dtgList.Columns[0].Visible = false;
+            //config.Load_DTG(sql, dtgList);
+            //dtgList.Columns[0].Visible = false;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -91,8 +89,8 @@ namespace ComputerParts.App
                 + "AND (Barcode Like '%" + txtSearch.Text + "%' OR Parts Like '%"
                 + txtSearch.Text + "%' OR Brand Like '%" + txtSearch.Text + "%' OR i.Description Like '%"
                 + txtSearch.Text + "%' OR Location Like '%" + txtSearch.Text + "%')";
-            config.Load_DTG(sql, dtgList);
-            dtgList.Columns[0].Visible = false;
+           // config.Load_DTG(sql, dtgList);
+          //  dtgList.Columns[0].Visible = false;
         }
 
     }   
