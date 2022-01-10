@@ -49,9 +49,10 @@ namespace ComputerParts.App
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtg_listItems = new System.Windows.Forms.DataGridView();
             this.lbl_id = new System.Windows.Forms.Label();
             this.tbxQuantity = new System.Windows.Forms.TextBox();
-            this.dtg_listItems = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_listItems)).BeginInit();
             this.SuspendLayout();
@@ -277,6 +278,7 @@ namespace ComputerParts.App
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.dtg_listItems);
             this.groupBox1.Controls.Add(this.lbl_id);
             this.groupBox1.Controls.Add(this.tbxQuantity);
@@ -287,6 +289,25 @@ namespace ComputerParts.App
             this.groupBox1.TabIndex = 60;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manage Items";
+            // 
+            // dtg_listItems
+            // 
+            this.dtg_listItems.AllowUserToAddRows = false;
+            this.dtg_listItems.AllowUserToDeleteRows = false;
+            this.dtg_listItems.AllowUserToResizeColumns = false;
+            this.dtg_listItems.AllowUserToResizeRows = false;
+            this.dtg_listItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtg_listItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_listItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtg_listItems.Location = new System.Drawing.Point(42, 50);
+            this.dtg_listItems.Margin = new System.Windows.Forms.Padding(4);
+            this.dtg_listItems.Name = "dtg_listItems";
+            this.dtg_listItems.RowHeadersVisible = false;
+            this.dtg_listItems.RowHeadersWidth = 62;
+            this.dtg_listItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtg_listItems.Size = new System.Drawing.Size(1581, 462);
+            this.dtg_listItems.TabIndex = 63;
+            this.dtg_listItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_listItems_CellClick_1);
             // 
             // lbl_id
             // 
@@ -309,24 +330,19 @@ namespace ComputerParts.App
             this.tbxQuantity.Size = new System.Drawing.Size(918, 29);
             this.tbxQuantity.TabIndex = 30;
             // 
-            // dtg_listItems
+            // btnRefresh
             // 
-            this.dtg_listItems.AllowUserToAddRows = false;
-            this.dtg_listItems.AllowUserToDeleteRows = false;
-            this.dtg_listItems.AllowUserToResizeColumns = false;
-            this.dtg_listItems.AllowUserToResizeRows = false;
-            this.dtg_listItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtg_listItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_listItems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtg_listItems.Location = new System.Drawing.Point(42, 50);
-            this.dtg_listItems.Margin = new System.Windows.Forms.Padding(4);
-            this.dtg_listItems.Name = "dtg_listItems";
-            this.dtg_listItems.RowHeadersVisible = false;
-            this.dtg_listItems.RowHeadersWidth = 62;
-            this.dtg_listItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtg_listItems.Size = new System.Drawing.Size(1581, 462);
-            this.dtg_listItems.TabIndex = 63;
-            this.dtg_listItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_listItems_CellClick_1);
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRefresh.Location = new System.Drawing.Point(1167, 814);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(405, 67);
+            this.btnRefresh.TabIndex = 61;
+            this.btnRefresh.Text = "REFRESH";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // ManageItems
             // 
@@ -389,5 +405,6 @@ namespace ComputerParts.App
         internal System.Windows.Forms.TextBox tbxQuantity;
         internal System.Windows.Forms.Label lbl_id;
         internal System.Windows.Forms.DataGridView dtg_listItems;
+        internal System.Windows.Forms.Button btnRefresh;
     }
 }
