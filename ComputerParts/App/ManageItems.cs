@@ -148,8 +148,8 @@ namespace ComputerParts.App
         {
             BindingSource bs = new BindingSource();
             bs.DataSource = ConnectandReadList("SELECT `ItemID`,`Barcode`,`Parts`,`Brand`, `Quantity`, i.`Description`,`Location`, `ComputerSet`,`Status` FROM `tblbrand` b,`tblitems` i, `tblparts`  p, `tbllocation` l,tblcompset c WHERE b.`BrandID`=i.`BrandID` AND i.`PartsID`=p.`PartsID` AND i.`LocationID`=l.`LocationID` AND i.CompSetID=c.CompSetID");
-            dtgList.DataSource = null;
-            dtgList.DataSource = bs;
+            dtg_listItems.DataSource = null;
+            dtg_listItems.DataSource = bs;
         }
     }
     }
