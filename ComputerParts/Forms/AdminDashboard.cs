@@ -177,6 +177,9 @@ namespace ComputerParts
 
             DateTime date = DateTime.Now;
             dshDate.Text = string.Format("{0:D}", date);
+
+            string user = Login.GetUserAccountName.ToString();
+            lblUser.Text = user;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

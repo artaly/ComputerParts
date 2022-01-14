@@ -20,6 +20,8 @@ namespace ComputerParts
         private MySqlConnection con = new MySqlConnection("server=localhost;user id=root;database=dbmonitoring;sslMode=none");
         private MySqlCommand cmd;
         private MySqlDataAdapter da;
+        private MySqlDataReader reader;
+        public static string GetUserAccountName;
         public Login()
         {
             InitializeComponent();
@@ -51,7 +53,22 @@ namespace ComputerParts
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            sql = "SELECT * FROM tbluseraccounts WHERE Username='" + txtUsername.Text + "' AND Pass = sha1('" + txtPassword.Text + "')";
             MySqlConnection con = new MySqlConnection("server=localhost;user id=root;database=dbmonitoring;sslMode=none");
+            con.Close();
+            con.Open();
+            cmd = new MySqlCommand(sql, con);
+
+            reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                reader.Read();
+                GetUserAccountName = reader["Fullname"].ToString();
+            }
+            con.Close();
+
+
+
             cmd = new MySqlCommand("SELECT * FROM `tbluseraccounts` WHERE Username = '" + txtUsername.Text + "' and Pass = sha1('" + txtPassword.Text + "')", con);
             con.Open();
             MySqlDataReader myReader;
