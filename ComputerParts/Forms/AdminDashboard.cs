@@ -14,7 +14,6 @@ namespace ComputerParts
 {
     public partial class Dashboard : Form
     {
-        private TransferItem transferItem;
         private ManageUser manageUser;
         private ItemList itemList;
         private ManageItems manageItems;
