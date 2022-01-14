@@ -29,12 +29,14 @@ namespace ComputerParts.App
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemList));
             this.ComboBox1 = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
             this.dtgList = new System.Windows.Forms.DataGridView();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // ComboBox1
@@ -93,12 +95,13 @@ namespace ComputerParts.App
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(1592, 16);
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(1576, 19);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(96, 30);
-            this.btnRefresh.TabIndex = 46;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Size = new System.Drawing.Size(30, 30);
+            this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRefresh.TabIndex = 47;
+            this.btnRefresh.TabStop = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // ItemList
@@ -115,6 +118,7 @@ namespace ComputerParts.App
             this.Size = new System.Drawing.Size(1627, 1006);
             this.Load += new System.EventHandler(this.ItemList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,6 +130,6 @@ namespace ComputerParts.App
         internal System.Windows.Forms.TextBox txtSearch;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.DataGridView dtgList;
-        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.PictureBox btnRefresh;
     }
 }
