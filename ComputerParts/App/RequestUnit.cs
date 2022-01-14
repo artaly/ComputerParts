@@ -16,7 +16,8 @@ namespace ComputerParts.App
         SQLConfig config = new SQLConfig();
         string sql;
         private MySqlConnection con = new MySqlConnection("server=localhost;user id=root;database=dbmonitoring;sslMode=none");
-        private MySqlCommand cmd;
+        private MySqlCommand cmd = new MySqlCommand();
+        private MySqlDataAdapter da = new MySqlDataAdapter();
         public DataTable dt;
         public RequestUnit()
         {
@@ -53,6 +54,11 @@ namespace ComputerParts.App
 
         private void RequestUnit_Load(object sender, EventArgs e)
         {
+            dtpFromDate.Format = DateTimePickerFormat.Custom;
+            dtpToDate.Format = DateTimePickerFormat.Custom;
+
+            dtpFromDate.CustomFormat = "yyyy-MM-dd";
+            dtpToDate.CustomFormat = "yyyy-MM-dd";
             sql = "select Description from tblitems";
             config.autocomplete(sql, tbxItemToReq);
             FillDataGridView();
@@ -60,7 +66,7 @@ namespace ComputerParts.App
 
         protected void FillDataGridView()
         {
-            config.Load_DTG("SELECT * FROM tblrequests", dtgReq);
+            config.Load_DTG("SELECT * FROM tblrequests ORDER BY DateRequested ASC", dtgReq);
         }
         private void ClearTextBoxes(ControlCollection controls)
         {
@@ -68,6 +74,27 @@ namespace ComputerParts.App
                 tb.Text = string.Empty;
             foreach (Control c in controls)
                 ClearTextBoxes(c.Controls);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            sql = "SELECT * FROM tblrequests WHERE DateRequested>='" + dtpFromDate.Text + "' AND DateRequested<='" + dtpToDate.Text + "' ORDER BY DateRequested ASC";
+            cmd = new MySqlCommand(sql, con);
+
+            da = new MySqlDataAdapter(cmd);
+            con.Close();
+
+            dt = new DataTable();
+            da.Fill(dt);
+
+            dtgReq.DataSource = dt;
+            dtgReq.Refresh();
+        }
+
+        private void btnClearS_Click(object sender, EventArgs e)
+        {
+            config.Load_DTG("SELECT * FROM tblrequests ORDER BY DateRequested ASC", dtgReq);
         }
     }
 }
