@@ -30,6 +30,8 @@ namespace ComputerParts.App
         private void InitializeComponent()
         {
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_username = new System.Windows.Forms.TextBox();
+            this.txt_name = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_pass = new System.Windows.Forms.TextBox();
             this.cbHide = new Bunifu.Framework.UI.BunifuCheckbox();
@@ -44,8 +46,6 @@ namespace ComputerParts.App
             this.btnSave = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.txt_name = new System.Windows.Forms.TextBox();
-            this.txt_username = new System.Windows.Forms.TextBox();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_listUser)).BeginInit();
             this.SuspendLayout();
@@ -64,20 +64,38 @@ namespace ComputerParts.App
             this.GroupBox1.Controls.Add(this.label1);
             this.GroupBox1.Controls.Add(this.Label2);
             this.GroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GroupBox1.Location = new System.Drawing.Point(35, 21);
-            this.GroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.GroupBox1.Location = new System.Drawing.Point(31, 17);
+            this.GroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.GroupBox1.Size = new System.Drawing.Size(1688, 382);
+            this.GroupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupBox1.Size = new System.Drawing.Size(1500, 306);
             this.GroupBox1.TabIndex = 15;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Manage User";
+            // 
+            // txt_username
+            // 
+            this.txt_username.ForeColor = System.Drawing.Color.Black;
+            this.txt_username.Location = new System.Drawing.Point(606, 123);
+            this.txt_username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(425, 38);
+            this.txt_username.TabIndex = 54;
+            // 
+            // txt_name
+            // 
+            this.txt_name.ForeColor = System.Drawing.Color.Black;
+            this.txt_name.Location = new System.Drawing.Point(606, 62);
+            this.txt_name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_name.Name = "txt_name";
+            this.txt_name.Size = new System.Drawing.Size(425, 38);
+            this.txt_name.TabIndex = 53;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(974, 281);
+            this.label5.Location = new System.Drawing.Point(866, 225);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 18);
@@ -87,10 +105,10 @@ namespace ComputerParts.App
             // txt_pass
             // 
             this.txt_pass.ForeColor = System.Drawing.Color.Black;
-            this.txt_pass.Location = new System.Drawing.Point(682, 219);
-            this.txt_pass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_pass.Location = new System.Drawing.Point(606, 175);
+            this.txt_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_pass.Name = "txt_pass";
-            this.txt_pass.Size = new System.Drawing.Size(478, 38);
+            this.txt_pass.Size = new System.Drawing.Size(425, 38);
             this.txt_pass.TabIndex = 42;
             this.txt_pass.UseSystemPasswordChar = true;
             // 
@@ -102,8 +120,8 @@ namespace ComputerParts.App
             this.cbHide.Checked = false;
             this.cbHide.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.cbHide.ForeColor = System.Drawing.Color.White;
-            this.cbHide.Location = new System.Drawing.Point(1131, 281);
-            this.cbHide.Margin = new System.Windows.Forms.Padding(18, 19, 18, 19);
+            this.cbHide.Location = new System.Drawing.Point(1005, 225);
+            this.cbHide.Margin = new System.Windows.Forms.Padding(16, 15, 16, 15);
             this.cbHide.Name = "cbHide";
             this.cbHide.Size = new System.Drawing.Size(20, 20);
             this.cbHide.TabIndex = 51;
@@ -113,7 +131,7 @@ namespace ComputerParts.App
             // 
             this.lbl_id.AutoSize = true;
             this.lbl_id.Font = new System.Drawing.Font("Arial", 10F);
-            this.lbl_id.Location = new System.Drawing.Point(673, 36);
+            this.lbl_id.Location = new System.Drawing.Point(598, 29);
             this.lbl_id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_id.Name = "lbl_id";
             this.lbl_id.Size = new System.Drawing.Size(26, 19);
@@ -128,17 +146,17 @@ namespace ComputerParts.App
             this.cbo_type.Items.AddRange(new object[] {
             "Administrator",
             "Staff"});
-            this.cbo_type.Location = new System.Drawing.Point(682, 316);
-            this.cbo_type.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbo_type.Location = new System.Drawing.Point(606, 253);
+            this.cbo_type.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbo_type.Name = "cbo_type";
-            this.cbo_type.Size = new System.Drawing.Size(481, 45);
+            this.cbo_type.Size = new System.Drawing.Size(428, 45);
             this.cbo_type.TabIndex = 37;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(486, 154);
+            this.label4.Location = new System.Drawing.Point(432, 123);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(147, 32);
@@ -149,7 +167,7 @@ namespace ComputerParts.App
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(493, 229);
+            this.label3.Location = new System.Drawing.Point(438, 183);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 32);
@@ -160,7 +178,7 @@ namespace ComputerParts.App
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(556, 328);
+            this.label1.Location = new System.Drawing.Point(494, 262);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 32);
@@ -171,7 +189,7 @@ namespace ComputerParts.App
             // 
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label2.Location = new System.Drawing.Point(538, 80);
+            this.Label2.Location = new System.Drawing.Point(478, 64);
             this.Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(94, 32);
@@ -187,13 +205,13 @@ namespace ComputerParts.App
             this.dtg_listUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_listUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_listUser.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtg_listUser.Location = new System.Drawing.Point(35, 425);
-            this.dtg_listUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtg_listUser.Location = new System.Drawing.Point(31, 340);
+            this.dtg_listUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtg_listUser.Name = "dtg_listUser";
             this.dtg_listUser.RowHeadersVisible = false;
             this.dtg_listUser.RowHeadersWidth = 62;
             this.dtg_listUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtg_listUser.Size = new System.Drawing.Size(1554, 780);
+            this.dtg_listUser.Size = new System.Drawing.Size(1381, 624);
             this.dtg_listUser.TabIndex = 44;
             this.dtg_listUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_listUser_CellClick);
             // 
@@ -202,10 +220,10 @@ namespace ComputerParts.App
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.Location = new System.Drawing.Point(1598, 586);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdate.Location = new System.Drawing.Point(1420, 469);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(170, 115);
+            this.btnUpdate.Size = new System.Drawing.Size(236, 92);
             this.btnUpdate.TabIndex = 47;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -216,10 +234,10 @@ namespace ComputerParts.App
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSave.Location = new System.Drawing.Point(1598, 461);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Location = new System.Drawing.Point(1420, 369);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(170, 115);
+            this.btnSave.Size = new System.Drawing.Size(236, 92);
             this.btnSave.TabIndex = 48;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -230,10 +248,10 @@ namespace ComputerParts.App
             this.btnNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNew.Location = new System.Drawing.Point(1598, 836);
-            this.btnNew.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNew.Location = new System.Drawing.Point(1420, 669);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(170, 115);
+            this.btnNew.Size = new System.Drawing.Size(236, 92);
             this.btnNew.TabIndex = 49;
             this.btnNew.Text = "NEW";
             this.btnNew.UseVisualStyleBackColor = false;
@@ -244,36 +262,18 @@ namespace ComputerParts.App
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Location = new System.Drawing.Point(1598, 711);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDelete.Location = new System.Drawing.Point(1420, 569);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(170, 115);
+            this.btnDelete.Size = new System.Drawing.Size(236, 92);
             this.btnDelete.TabIndex = 50;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // txt_name
-            // 
-            this.txt_name.ForeColor = System.Drawing.Color.Black;
-            this.txt_name.Location = new System.Drawing.Point(682, 77);
-            this.txt_name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(478, 38);
-            this.txt_name.TabIndex = 53;
-            // 
-            // txt_username
-            // 
-            this.txt_username.ForeColor = System.Drawing.Color.Black;
-            this.txt_username.Location = new System.Drawing.Point(682, 154);
-            this.txt_username.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_username.Name = "txt_username";
-            this.txt_username.Size = new System.Drawing.Size(478, 38);
-            this.txt_username.TabIndex = 54;
-            // 
             // ManageUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDelete);
@@ -283,7 +283,7 @@ namespace ComputerParts.App
             this.Controls.Add(this.GroupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ManageUser";
-            this.Size = new System.Drawing.Size(1830, 1258);
+            this.Size = new System.Drawing.Size(1627, 1006);
             this.Load += new System.EventHandler(this.ManageUser_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
