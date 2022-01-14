@@ -27,7 +27,7 @@ namespace ComputerParts.App
         private void btnRequest_Click(object sender, EventArgs e)
         {
             var @minusQty = nudQuantity.ToString();
-            sql = "INSERT INTO `tblrequests`(`FullName`, `Email`, `ContactNo`, `ItemToRequest`, `Quantity`, `DateRequested`, `RequestedBy`) " + "VALUES ('" + tbxFullName.Text + "','" + tbxEmail.Text + "','" + tbxContactNo.Text + "','" + tbxItemToReq.Text + "', '" + nudQuantity.Text + "', Now(),)";
+            sql = "INSERT INTO `tblrequests`(`FullName`, `Email`, `ContactNo`, `ItemToRequest`, `Quantity`, `DateRequested`, `RequestedBy`) " + "VALUES ('" + tbxFullName.Text + "','" + tbxEmail.Text + "','" + tbxContactNo.Text + "','" + tbxItemToReq.Text + "', '" + nudQuantity.Text + "',Now(),'" + Login.GetUserAccountName.ToString() + "')";
             config.Execute_CUD(sql, "error to execute the query.", "Item requested!");
 
             
