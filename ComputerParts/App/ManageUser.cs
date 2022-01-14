@@ -54,12 +54,13 @@ namespace ComputerParts.App
             }
 
 
-            sql = "insert into tbluseraccounts (`Fullname`, `Username`, `Pass`, `Role`,`Status`) "
+            sql = "insert into tbluseraccounts (`Fullname`, `Username`, `Pass`, `Role`) "
              + "values('" + txt_name.Text + "','" + txt_username.Text
              + "',sha1('" + txt_pass.Text + "'),'" + cbo_type.Text
-             + "','Active')";
+             + "')";
             config.Execute_CUD(sql, "error to execute the query.", "New User has been saved in the database.");
             FillDataGridView();
+            ClearTextBoxes(this.Controls);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -97,7 +98,7 @@ namespace ComputerParts.App
             lbl_id.Text = "id";
             funct.clearTxt(this);
             cbo_type.Text = "Administrator";
-            config.Load_DTG("Select UserID as 'ID' ,Fullname as 'Name',Username as 'Username',Role as 'Type' From tbluseraccounts WHERE Status='Active'", dtg_listUser);
+            config.Load_DTG("Select UserID as 'ID' ,Fullname as 'Name',Username as 'Username',Role as 'Type' From tbluseraccounts", dtg_listUser);
             dtg_listUser.Columns[0].Visible = false;
             if (lbl_id.Text == "id")
             {
@@ -127,7 +128,7 @@ namespace ComputerParts.App
 
         protected void FillDataGridView()
         {
-            config.Load_DTG("Select UserID as 'ID' ,Fullname as 'Name',Username as 'Username',Role as 'Type' From tbluseraccounts WHERE Status='Active'", dtg_listUser);
+            config.Load_DTG("Select UserID as 'ID' ,Fullname as 'Name',Username as 'Username',Role as 'Type' From tbluseraccounts", dtg_listUser);
 
         }
 
