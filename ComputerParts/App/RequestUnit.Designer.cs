@@ -78,6 +78,7 @@
             // 
             // tbxEmail
             // 
+            this.tbxEmail.Font = new System.Drawing.Font("Arial", 12F);
             this.tbxEmail.Location = new System.Drawing.Point(40, 263);
             this.tbxEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxEmail.Name = "tbxEmail";
@@ -86,6 +87,7 @@
             // 
             // tbxContactNo
             // 
+            this.tbxContactNo.Font = new System.Drawing.Font("Arial", 12F);
             this.tbxContactNo.Location = new System.Drawing.Point(40, 362);
             this.tbxContactNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxContactNo.Name = "tbxContactNo";
@@ -94,6 +96,7 @@
             // 
             // tbxFullName
             // 
+            this.tbxFullName.Font = new System.Drawing.Font("Arial", 12F);
             this.tbxFullName.Location = new System.Drawing.Point(40, 182);
             this.tbxFullName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxFullName.Name = "tbxFullName";
@@ -102,6 +105,7 @@
             // 
             // tbxReqID
             // 
+            this.tbxReqID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxReqID.Location = new System.Drawing.Point(40, 94);
             this.tbxReqID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbxReqID.Name = "tbxReqID";
@@ -111,6 +115,7 @@
             // tbxItemToReq
             // 
             this.tbxItemToReq.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbxItemToReq.Font = new System.Drawing.Font("Arial", 12F);
             this.tbxItemToReq.Location = new System.Drawing.Point(40, 441);
             this.tbxItemToReq.Name = "tbxItemToReq";
             this.tbxItemToReq.Size = new System.Drawing.Size(528, 30);
@@ -151,10 +156,10 @@
             this.btnRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(8)))), ((int)(((byte)(119)))));
             this.btnRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRequest.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRequest.Location = new System.Drawing.Point(332, 589);
+            this.btnRequest.Location = new System.Drawing.Point(40, 603);
             this.btnRequest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRequest.Name = "btnRequest";
-            this.btnRequest.Size = new System.Drawing.Size(151, 69);
+            this.btnRequest.Size = new System.Drawing.Size(528, 69);
             this.btnRequest.TabIndex = 60;
             this.btnRequest.Text = "REQUEST";
             this.btnRequest.UseVisualStyleBackColor = false;
