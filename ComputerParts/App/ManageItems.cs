@@ -77,7 +77,7 @@ namespace ComputerParts.App
             {
                 
                 sql = "INSERT INTO `tblitems` (`Barcode`, `BrandID`, `Description`, `PartsID`, `RecievedDate`, `LocationID`, `Quantity`, `CompSetID`, `Status`) " +
-         " VALUES ('" + txtBarcode.Text + "'," + cboBrand.SelectedValue + ",'" + txtDescription.Text + "'," + cboParts.SelectedValue + ",Date(Now())," + cboLocation.SelectedValue + ",'"+ tbxQuantity.Text+ "'," + cboCompSet.SelectedValue + ",'" + cboStatus.Text + "')";
+         " VALUES ('" + txtBarcode.Text + "'," + cboBrand.SelectedValue + ",'" + txtDescription.Text + "'," + cboParts.SelectedValue + ",Date(Now())," + cboLocation.SelectedValue + ",'"+ tbxQuantity.Text+ "'," + cboCompSet.SelectedValue + ",'" + cboStatus.SelectedValue + "')";
                 config.Execute_CUD(sql, "error to execute the query.", "New item created successfully.");
             }
             btnNew_Click(sender, e);

@@ -27,7 +27,7 @@ namespace ComputerParts.App
         private void btnRequest_Click(object sender, EventArgs e)
         {
             var @minusQty = nudQuantity.ToString();
-            sql = "INSERT INTO `tblrequests`(`FullName`, `Email`, `ContactNo`, `ItemToRequest`, `Quantity`, `DateRequested`) " + "VALUES ('" + tbxFullName.Text + "','" + tbxEmail.Text + "','" + tbxContactNo.Text + "','" + tbxItemToReq.Text + "', '" + nudQuantity.Text + "', Now())";
+            sql = "INSERT INTO `tblrequests`(`FullName`, `Email`, `ContactNo`, `ItemToRequest`, `Quantity`, `DateRequested`, `RequestedBy`) " + "VALUES ('" + tbxFullName.Text + "','" + tbxEmail.Text + "','" + tbxContactNo.Text + "','" + tbxItemToReq.Text + "', '" + nudQuantity.Text + "', Now(),)";
             config.Execute_CUD(sql, "error to execute the query.", "Item requested!");
 
             
@@ -66,7 +66,7 @@ namespace ComputerParts.App
 
         protected void FillDataGridView()
         {
-            config.Load_DTG("SELECT * FROM tblrequests ORDER BY DateRequested ASC", dtgReq);
+            config.Load_DTG("SELECT * FROM tblrequests ORDER BY DateRequested DESC", dtgReq);
         }
         private void ClearTextBoxes(ControlCollection controls)
         {
@@ -79,7 +79,7 @@ namespace ComputerParts.App
         private void btnSearch_Click(object sender, EventArgs e)
         {
             con.Open();
-            sql = "SELECT * FROM tblrequests WHERE DateRequested>='" + dtpFromDate.Text + "' AND DateRequested<='" + dtpToDate.Text + "' ORDER BY DateRequested ASC";
+            sql = "SELECT * FROM tblrequests WHERE DateRequested>='" + dtpFromDate.Text + "' AND DateRequested<='" + dtpToDate.Text + "' ORDER BY DateRequested DESC";
             cmd = new MySqlCommand(sql, con);
 
             da = new MySqlDataAdapter(cmd);
