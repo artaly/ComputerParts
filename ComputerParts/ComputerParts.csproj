@@ -91,12 +91,6 @@
     <Compile Include="App\RequestUnit.Designer.cs">
       <DependentUpon>RequestUnit.cs</DependentUpon>
     </Compile>
-    <Compile Include="App\TransferItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="App\TransferItem.Designer.cs">
-      <DependentUpon>TransferItem.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,9 +124,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="App\RequestUnit.resx">
       <DependentUpon>RequestUnit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="App\TransferItem.resx">
-      <DependentUpon>TransferItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
