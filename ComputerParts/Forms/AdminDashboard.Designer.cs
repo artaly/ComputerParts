@@ -34,6 +34,8 @@ namespace ComputerParts
             this.panel_main = new System.Windows.Forms.Panel();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.dshTime = new System.Windows.Forms.Label();
             this.dshDate = new System.Windows.Forms.Label();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -48,8 +50,6 @@ namespace ComputerParts
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.btnRequestUnit = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.lblUser = new System.Windows.Forms.Label();
             this.panel_main.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -64,7 +64,7 @@ namespace ComputerParts
             this.panel_main.Controls.Add(this.bunifuSeparator2);
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_main.Location = new System.Drawing.Point(293, 74);
-            this.panel_main.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_main.Margin = new System.Windows.Forms.Padding(4);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(1433, 808);
             this.panel_main.TabIndex = 2;
@@ -92,10 +92,33 @@ namespace ComputerParts
             this.panel4.Controls.Add(this.bunifuImageButton1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(293, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1433, 74);
             this.panel4.TabIndex = 1;
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblUser.Location = new System.Drawing.Point(150, 20);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(0, 29);
+            this.lblUser.TabIndex = 4;
+            // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblWelcome.Location = new System.Drawing.Point(28, 20);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(127, 29);
+            this.lblWelcome.TabIndex = 3;
+            this.lblWelcome.Text = "Welcome, ";
             // 
             // dshTime
             // 
@@ -114,7 +137,7 @@ namespace ComputerParts
             this.dshDate.AutoSize = true;
             this.dshDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dshDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dshDate.Location = new System.Drawing.Point(1230, 20);
+            this.dshDate.Location = new System.Drawing.Point(1181, 20);
             this.dshDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.dshDate.Name = "dshDate";
             this.dshDate.Size = new System.Drawing.Size(199, 29);
@@ -127,7 +150,7 @@ namespace ComputerParts
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.Location = new System.Drawing.Point(1695, 25);
-            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(4);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(23, 18);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -200,7 +223,7 @@ namespace ComputerParts
             // 
             this.menu_active.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(14)))), ((int)(((byte)(134)))));
             this.menu_active.Location = new System.Drawing.Point(0, 96);
-            this.menu_active.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menu_active.Margin = new System.Windows.Forms.Padding(4);
             this.menu_active.Name = "menu_active";
             this.menu_active.Size = new System.Drawing.Size(7, 58);
             this.menu_active.TabIndex = 7;
@@ -383,29 +406,6 @@ namespace ComputerParts
             this.btnRequestUnit.Textcolor = System.Drawing.Color.White;
             this.btnRequestUnit.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRequestUnit.Click += new System.EventHandler(this.btnRequestUnit_Click);
-            // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblWelcome.Location = new System.Drawing.Point(28, 20);
-            this.lblWelcome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(127, 29);
-            this.lblWelcome.TabIndex = 3;
-            this.lblWelcome.Text = "Welcome, ";
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblUser.Location = new System.Drawing.Point(150, 20);
-            this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(0, 29);
-            this.lblUser.TabIndex = 4;
             // 
             // Dashboard
             // 

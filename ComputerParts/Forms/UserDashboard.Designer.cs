@@ -40,14 +40,14 @@ namespace ComputerParts.Forms
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.btnRequestUnit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
             this.dshTime = new System.Windows.Forms.Label();
             this.dshDate = new System.Windows.Forms.Label();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel_main = new System.Windows.Forms.Panel();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.timerDash = new System.Windows.Forms.Timer(this.components);
-            this.lblUser = new System.Windows.Forms.Label();
-            this.lblWelcome = new System.Windows.Forms.Label();
             this.panelSideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
@@ -114,7 +114,7 @@ namespace ComputerParts.Forms
             // 
             this.menu_active.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(14)))), ((int)(((byte)(134)))));
             this.menu_active.Location = new System.Drawing.Point(0, 96);
-            this.menu_active.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.menu_active.Margin = new System.Windows.Forms.Padding(4);
             this.menu_active.Name = "menu_active";
             this.menu_active.Size = new System.Drawing.Size(7, 58);
             this.menu_active.TabIndex = 7;
@@ -236,78 +236,10 @@ namespace ComputerParts.Forms
             this.panel4.Controls.Add(this.btnClose);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(293, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1433, 74);
             this.panel4.TabIndex = 2;
-            // 
-            // dshTime
-            // 
-            this.dshTime.AutoSize = true;
-            this.dshTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dshTime.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dshTime.Location = new System.Drawing.Point(1503, 20);
-            this.dshTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.dshTime.Name = "dshTime";
-            this.dshTime.Size = new System.Drawing.Size(120, 29);
-            this.dshTime.TabIndex = 2;
-            this.dshTime.Text = "h:mm:ss tt";
-            // 
-            // dshDate
-            // 
-            this.dshDate.AutoSize = true;
-            this.dshDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dshDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dshDate.Location = new System.Drawing.Point(1211, 20);
-            this.dshDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.dshDate.Name = "dshDate";
-            this.dshDate.Size = new System.Drawing.Size(199, 29);
-            this.dshDate.TabIndex = 1;
-            this.dshDate.Text = "Date Placeholder";
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(7)))), ((int)(((byte)(70)))));
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.ImageActive = null;
-            this.btnClose.Location = new System.Drawing.Point(1695, 25);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(23, 18);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClose.TabIndex = 0;
-            this.btnClose.TabStop = false;
-            this.btnClose.Zoom = 10;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // panel_main
-            // 
-            this.panel_main.BackColor = System.Drawing.SystemColors.Control;
-            this.panel_main.Controls.Add(this.bunifuSeparator2);
-            this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_main.Location = new System.Drawing.Point(293, 74);
-            this.panel_main.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1433, 808);
-            this.panel_main.TabIndex = 3;
-            // 
-            // bunifuSeparator2
-            // 
-            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.bunifuSeparator2.LineThickness = 1;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(0, -22);
-            this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.bunifuSeparator2.Name = "bunifuSeparator2";
-            this.bunifuSeparator2.Size = new System.Drawing.Size(773, 43);
-            this.bunifuSeparator2.TabIndex = 0;
-            this.bunifuSeparator2.Transparency = 255;
-            this.bunifuSeparator2.Vertical = false;
-            // 
-            // timerDash
-            // 
-            this.timerDash.Enabled = true;
-            this.timerDash.Tick += new System.EventHandler(this.timerDash_Tick);
             // 
             // lblUser
             // 
@@ -331,6 +263,74 @@ namespace ComputerParts.Forms
             this.lblWelcome.Size = new System.Drawing.Size(127, 29);
             this.lblWelcome.TabIndex = 5;
             this.lblWelcome.Text = "Welcome, ";
+            // 
+            // dshTime
+            // 
+            this.dshTime.AutoSize = true;
+            this.dshTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dshTime.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dshTime.Location = new System.Drawing.Point(1503, 20);
+            this.dshTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dshTime.Name = "dshTime";
+            this.dshTime.Size = new System.Drawing.Size(120, 29);
+            this.dshTime.TabIndex = 2;
+            this.dshTime.Text = "h:mm:ss tt";
+            // 
+            // dshDate
+            // 
+            this.dshDate.AutoSize = true;
+            this.dshDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dshDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dshDate.Location = new System.Drawing.Point(1160, 20);
+            this.dshDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dshDate.Name = "dshDate";
+            this.dshDate.Size = new System.Drawing.Size(199, 29);
+            this.dshDate.TabIndex = 1;
+            this.dshDate.Text = "Date Placeholder";
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(7)))), ((int)(((byte)(70)))));
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.ImageActive = null;
+            this.btnClose.Location = new System.Drawing.Point(1695, 25);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(23, 18);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 0;
+            this.btnClose.TabStop = false;
+            this.btnClose.Zoom = 10;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // panel_main
+            // 
+            this.panel_main.BackColor = System.Drawing.SystemColors.Control;
+            this.panel_main.Controls.Add(this.bunifuSeparator2);
+            this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_main.Location = new System.Drawing.Point(293, 74);
+            this.panel_main.Margin = new System.Windows.Forms.Padding(4);
+            this.panel_main.Name = "panel_main";
+            this.panel_main.Size = new System.Drawing.Size(1433, 808);
+            this.panel_main.TabIndex = 3;
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            this.bunifuSeparator2.LineThickness = 1;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(0, -22);
+            this.bunifuSeparator2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Size = new System.Drawing.Size(773, 43);
+            this.bunifuSeparator2.TabIndex = 0;
+            this.bunifuSeparator2.Transparency = 255;
+            this.bunifuSeparator2.Vertical = false;
+            // 
+            // timerDash
+            // 
+            this.timerDash.Enabled = true;
+            this.timerDash.Tick += new System.EventHandler(this.timerDash_Tick);
             // 
             // UserDashboard
             // 
