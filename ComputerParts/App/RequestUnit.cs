@@ -26,15 +26,15 @@ namespace ComputerParts.App
 
         private void btnRequest_Click(object sender, EventArgs e)
         {
-            var @minusQty = nudQuantity.ToString();
 
             cmd = con.CreateCommand();
-
             con.Open();
-            cmd.CommandText = "SELECT Quantity FROM tblrequests WHERE ItemToRequest='" + tbxItemToReq.Text + "'";
+            cmd.CommandText = "SELECT Quantity FROM tblitems WHERE Description='" + tbxItemToReq.Text + "'";
 
             var obj = cmd.ExecuteScalar();
             int quantityNo = obj != null ? (int)obj : 0;
+
+            lblQty.Text = quantityNo.ToString();
 
             if (nudQuantity.Value <= quantityNo)
             {
@@ -43,28 +43,30 @@ namespace ComputerParts.App
 
 
                 int qty_s = (int)nudQuantity.Value;
-                    
-                string desc = tbxItemToReq.Text;
-                    sql = "UPDATE tblitems SET Quantity=Quantity-@quantity WHERE Description=@description";
-                    cmd = new MySqlCommand(sql, con);
-                    cmd.Parameters.AddWithValue("@quantity", qty_s);
-                    cmd.Parameters.AddWithValue("@description", desc);
 
-                    ClearTextBoxes(this.Controls);
-                    
-                    cmd.ExecuteNonQuery();
-                    FillDataGridView();
-                } else if (quantityNo != 0 && nudQuantity.Value > quantityNo)
-                {
-                    MessageBox.Show("Insufficient stocks!");
-                    ClearTextBoxes(this.Controls);
-                } else if (quantityNo == 0 && nudQuantity.Value > quantityNo)
-                {
-                    MessageBox.Show("No stocks left for this item!");
-                    ClearTextBoxes(this.Controls);
-                }
-            
-           
+                string desc = tbxItemToReq.Text;
+                sql = "UPDATE tblitems SET Quantity=Quantity-@quantity WHERE Description=@description";
+                cmd = new MySqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@quantity", qty_s);
+                cmd.Parameters.AddWithValue("@description", desc);
+
+                ClearTextBoxes(this.Controls);
+
+                cmd.ExecuteNonQuery();
+                FillDataGridView();
+            }
+            else if (quantityNo != 0 && nudQuantity.Value > quantityNo)
+            {
+                MessageBox.Show("Insufficient stocks!");
+                ClearTextBoxes(this.Controls);
+            }
+            else if (quantityNo == 0 && nudQuantity.Value > quantityNo)
+            {
+                MessageBox.Show("No stocks left for this item!");
+                ClearTextBoxes(this.Controls);
+            }
+
+
             con.Close();
         }
 
