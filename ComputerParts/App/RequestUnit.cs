@@ -27,22 +27,45 @@ namespace ComputerParts.App
         private void btnRequest_Click(object sender, EventArgs e)
         {
             var @minusQty = nudQuantity.ToString();
-            sql = "INSERT INTO `tblrequests`(`FullName`, `Email`, `ContactNo`, `ItemToRequest`, `Quantity`, `DateRequested`, `RequestedBy`) " + "VALUES ('" + tbxFullName.Text + "','" + tbxEmail.Text + "','" + tbxContactNo.Text + "','" + tbxItemToReq.Text + "', '" + nudQuantity.Text + "',Now(),'" + Login.GetUserAccountName.ToString() + "')";
-            config.Execute_CUD(sql, "error to execute the query.", "Item requested!");
 
-            
-            int qty_s = (int)nudQuantity.Value;
-            string desc = tbxItemToReq.Text;
-            sql = "UPDATE tblitems SET Quantity=Quantity-@quantity WHERE Description=@description";
-            cmd = new MySqlCommand(sql, con);
-            cmd.Parameters.AddWithValue("@quantity", qty_s);
-            cmd.Parameters.AddWithValue("@description", desc);
+            cmd = con.CreateCommand();
 
-            ClearTextBoxes(this.Controls);
             con.Open();
-            cmd.ExecuteNonQuery();
+            cmd.CommandText = "SELECT Quantity FROM tblrequests WHERE ItemToRequest='" + tbxItemToReq.Text + "'";
+
+            var obj = cmd.ExecuteScalar();
+            int quantityNo = obj != null ? (int)obj : 0;
+
+            if (nudQuantity.Value <= quantityNo)
+            {
+                sql = "INSERT INTO `tblrequests`(`FullName`, `Email`, `ContactNo`, `ItemToRequest`, `Quantity`, `DateRequested`, `RequestedBy`) " + "VALUES ('" + tbxFullName.Text + "','" + tbxEmail.Text + "','" + tbxContactNo.Text + "','" + tbxItemToReq.Text + "', '" + nudQuantity.Text + "',Now(),'" + Login.GetUserAccountName.ToString() + "')";
+                config.Execute_CUD(sql, "error to execute the query.", "Item requested!");
+
+
+                int qty_s = (int)nudQuantity.Value;
+                    
+                string desc = tbxItemToReq.Text;
+                    sql = "UPDATE tblitems SET Quantity=Quantity-@quantity WHERE Description=@description";
+                    cmd = new MySqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@quantity", qty_s);
+                    cmd.Parameters.AddWithValue("@description", desc);
+
+                    ClearTextBoxes(this.Controls);
+                    
+                    cmd.ExecuteNonQuery();
+                    FillDataGridView();
+                } else if (quantityNo != 0 && nudQuantity.Value > quantityNo)
+                {
+                    MessageBox.Show("Insufficient stocks!");
+                    ClearTextBoxes(this.Controls);
+                } else if (quantityNo == 0 && nudQuantity.Value > quantityNo)
+                {
+                    MessageBox.Show("No stocks left for this item!");
+                    ClearTextBoxes(this.Controls);
+                }
+            
+           
             con.Close();
-            FillDataGridView();
         }
 
 
