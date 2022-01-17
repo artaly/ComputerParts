@@ -63,11 +63,11 @@ namespace ComputerParts.App
             this.GroupBox1.Controls.Add(this.label3);
             this.GroupBox1.Controls.Add(this.label1);
             this.GroupBox1.Controls.Add(this.Label2);
-            this.GroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.GroupBox1.Location = new System.Drawing.Point(31, 17);
-            this.GroupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GroupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.GroupBox1.Size = new System.Drawing.Size(1500, 306);
             this.GroupBox1.TabIndex = 15;
             this.GroupBox1.TabStop = false;
@@ -77,18 +77,18 @@ namespace ComputerParts.App
             // 
             this.txt_username.ForeColor = System.Drawing.Color.Black;
             this.txt_username.Location = new System.Drawing.Point(606, 123);
-            this.txt_username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_username.Margin = new System.Windows.Forms.Padding(4);
             this.txt_username.Name = "txt_username";
-            this.txt_username.Size = new System.Drawing.Size(425, 38);
+            this.txt_username.Size = new System.Drawing.Size(425, 30);
             this.txt_username.TabIndex = 54;
             // 
             // txt_name
             // 
             this.txt_name.ForeColor = System.Drawing.Color.Black;
             this.txt_name.Location = new System.Drawing.Point(606, 62);
-            this.txt_name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(425, 38);
+            this.txt_name.Size = new System.Drawing.Size(425, 30);
             this.txt_name.TabIndex = 53;
             // 
             // label5
@@ -106,9 +106,9 @@ namespace ComputerParts.App
             // 
             this.txt_pass.ForeColor = System.Drawing.Color.Black;
             this.txt_pass.Location = new System.Drawing.Point(606, 175);
-            this.txt_pass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_pass.Margin = new System.Windows.Forms.Padding(4);
             this.txt_pass.Name = "txt_pass";
-            this.txt_pass.Size = new System.Drawing.Size(425, 38);
+            this.txt_pass.Size = new System.Drawing.Size(425, 30);
             this.txt_pass.TabIndex = 42;
             this.txt_pass.UseSystemPasswordChar = true;
             // 
@@ -147,7 +147,7 @@ namespace ComputerParts.App
             "Administrator",
             "Staff"});
             this.cbo_type.Location = new System.Drawing.Point(606, 253);
-            this.cbo_type.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbo_type.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_type.Name = "cbo_type";
             this.cbo_type.Size = new System.Drawing.Size(428, 45);
             this.cbo_type.TabIndex = 37;
@@ -206,7 +206,7 @@ namespace ComputerParts.App
             this.dtg_listUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_listUser.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dtg_listUser.Location = new System.Drawing.Point(31, 340);
-            this.dtg_listUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtg_listUser.Margin = new System.Windows.Forms.Padding(4);
             this.dtg_listUser.Name = "dtg_listUser";
             this.dtg_listUser.RowHeadersVisible = false;
             this.dtg_listUser.RowHeadersWidth = 62;
@@ -221,7 +221,7 @@ namespace ComputerParts.App
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUpdate.Location = new System.Drawing.Point(1420, 469);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(236, 92);
             this.btnUpdate.TabIndex = 47;
@@ -235,7 +235,7 @@ namespace ComputerParts.App
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSave.Location = new System.Drawing.Point(1420, 369);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(236, 92);
             this.btnSave.TabIndex = 48;
@@ -249,7 +249,7 @@ namespace ComputerParts.App
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNew.Location = new System.Drawing.Point(1420, 669);
-            this.btnNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(4);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(236, 92);
             this.btnNew.TabIndex = 49;
@@ -263,7 +263,7 @@ namespace ComputerParts.App
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnDelete.Location = new System.Drawing.Point(1420, 569);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(236, 92);
             this.btnDelete.TabIndex = 50;
