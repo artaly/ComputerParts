@@ -34,8 +34,6 @@ namespace ComputerParts.App
             var obj = cmd.ExecuteScalar();
             int quantityNo = obj != null ? (int)obj : 0;
 
-            lblQty.Text = quantityNo.ToString();
-
             if (nudQuantity.Value <= quantityNo)
             {
                 sql = "INSERT INTO `tblrequests`(`FullName`, `Email`, `ContactNo`, `ItemToRequest`, `Quantity`, `DateRequested`, `RequestedBy`) " + "VALUES ('" + tbxFullName.Text + "','" + tbxEmail.Text + "','" + tbxContactNo.Text + "','" + tbxItemToReq.Text + "', '" + nudQuantity.Text + "',Now(),'" + Login.GetUserAccountName.ToString() + "')";
